@@ -23,10 +23,10 @@ WORKDIR /HueTube/src/
 RUN npm config set registry http://registry.npmjs.org/
 
 #Install node modules
-RUN npm install
+RUN npm install -g
 
 #Expose port and run app
 EXPOSE 7076
 
-CMD ["node", "./app.js"]
+CMD ["forever", "./app.js"]
 
