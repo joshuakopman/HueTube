@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var IndexController = require('./controllers/index');
 var LightController = require('./controllers/LightController');
 var LightService = require('./services/LightService');
+var config = require("../config")
 /*
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
@@ -73,4 +74,4 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-app.listen(7076);
+app.listen(config.node.port);

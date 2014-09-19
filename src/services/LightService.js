@@ -50,7 +50,7 @@ LightService.prototype.BuildLightsResponse = function(Lights){
 		{
 			var lightItem = Lights[x.toString()];
 			var lightObject = new Light();
-					lightObject.lightid = x;
+		    lightObject.lightid = x;
 			for(var lightProp in lightItem)
 			{
 				if(lightProp == "state")
