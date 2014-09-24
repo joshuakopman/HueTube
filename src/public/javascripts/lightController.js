@@ -34,7 +34,6 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   }
   var lightStateChange = {};
       lightStateChange.state = switchedToState;
-      lightStateChange.id = id;
       lightStateChange.hue = hue;
       lightStateChange.bri = bri;
       lightStateChange.sat = sat;
@@ -42,7 +41,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
 
   var endPoint = (isGroup) ? 'groups/':'lights/';
   
-  $http.post('http://www.huetube.info/' + endPoint, JSON.stringify(lightStateChange)).
+  $http.put('http://www.huetube.info/' + endPoint + "/" +id, JSON.stringify(lightStateChange)).
       success(function(data) {
           socket.emit('ready');
       });
