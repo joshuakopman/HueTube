@@ -41,7 +41,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
 
   var endPoint = (isGroup) ? 'groups/':'lights/';
   
-  $http.put('http://192.168.59.103:7076/' + endPoint + "/" +id, JSON.stringify(lightStateChange)).
+  $http.put('http://192.168.59.103:7076/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           socket.emit('ready');
       });
