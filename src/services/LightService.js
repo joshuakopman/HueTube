@@ -108,8 +108,6 @@ LightService.prototype.setLightState = function(state,lightid,colorHue,colorBri,
     var lightSwitchObj = { on: boolState, hue: colorHue, bri: colorBri, sat: colorSat, effect: effect};
     var self = this;
 
-    console.log(Config.hue.uri + '/lights/'+lightid+'/state');
-    console.log(JSON.stringify(lightSwitchObj));
 
     this.getJSON(function(statusCode){
 		callback(statusCode);
