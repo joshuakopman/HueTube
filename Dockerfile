@@ -14,7 +14,7 @@ RUN apt-get install -y nodejs npm git git-core
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 #Pull Latest Code From Repo
-RUN git clone https://github.com/aesopwaits/HueTube.git
+RUN git clone https://github.com/aesopwaits/HueTube.git #committed
 
 #Set working directory
 WORKDIR /HueTube/src/
@@ -30,5 +30,8 @@ RUN npm install forever -g
 
 #Expose port and run app
 EXPOSE 7076
+
+#Try to expose port for socket.io
+EXPOSE 7075
 
 CMD ["forever", "./app.js"]
