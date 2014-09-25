@@ -20,7 +20,7 @@ angular.module("wakeup",["ng"]).directive("wakeup",function(){
 		replace:!0,
 		scope:{wakeAlert:"&"},
 	    template: '<div class="wakeup">'+
-				      '<input type="image" src=".\\images\\trollface.png" title="Send the batsignal" height="35" width="35" name="wakeup" ng-click="wakeAlert()" value="Bat Signal">'+
+				      '<input type="image" src=".\\images\\sonic.png" title="Send the batsignal" height="35" width="35" name="wakeup" ng-click="wakeAlert()" value="Bat Signal">'+
 				  '</div>'
 		}
 });
