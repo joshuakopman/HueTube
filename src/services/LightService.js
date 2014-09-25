@@ -1,7 +1,7 @@
 var Light = require("../models/Light");
 var HueService = require("../services/HueService");
 var ColorHelper = require("../helpers/ColorHelper");
-var config = require("../config")
+var Config = require("../Config");
 
 LightService.prototype = new HueService();
 
@@ -74,9 +74,9 @@ LightService.prototype.BuildLightsResponse = function(Lights){
 
 LightService.prototype.getLights = function(callback){
 	var requestOptions = {
-	    host: config.hue.host,
-	    port: config.hue.port,
-	    path: config.hue.uri + '/lights',
+	    host: Config.hue.host,
+	    port: Config.hue.port,
+	    path: Config.hue.uri + '/lights',
 	    method: 'GET',
 	    headers: {
 	        'Content-Type': 'application/json'
@@ -93,9 +93,9 @@ LightService.prototype.getLights = function(callback){
 
 LightService.prototype.setLightState = function(state,lightid,colorHue,colorBri,colorSat,effect,callback){
 	var requestOptions = {
-	    host: config.hue.host,
-	    port: config.hue.port,
-	    path: config.hue.uri + '/lights/'+lightid+'/state',
+	    host: Config.hue.host,
+	    port: Config.hue.port,
+	    path: Config.hue.uri + '/lights/'+lightid+'/state',
 	    method: 'PUT',
 	    headers: {
 	        'Content-Type': 'application/json'
@@ -113,9 +113,9 @@ LightService.prototype.setLightState = function(state,lightid,colorHue,colorBri,
 
 LightService.prototype.setGroupState = function(state,groupid,colorHue,colorBri,colorSat,effect,callback){
 	var requestOptions = {
-	    host: config.hue.host,
-	    port: config.hue.port,
-	    path: config.hue.uri + '/groups/'+groupid+'/action',
+	    host: Config.hue.host,
+	    port: Config.hue.port,
+	    path: Config.hue.uri + '/groups/'+groupid+'/action',
 	    method: 'PUT',
 	    headers: {
 	        'Content-Type': 'application/json'

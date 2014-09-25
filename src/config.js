@@ -1,1 +1,1 @@
-var config = {};config.hue = {};config.node = {};config.hue.host = 10.10.12.150;config.hue.port = 80;config.hue.uri = '/api/newdeveloper';config.node.port = 7076;module.exports = config;
+var Config = {};Config.hue = {};Config.node = {};Config.hue.host = '10.10.12.150';Config.hue.port = 80;Config.hue.uri = '/api/newdeveloper';Config.node.port = 7076;module.exports = Config;
