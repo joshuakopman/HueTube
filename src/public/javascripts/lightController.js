@@ -2,25 +2,22 @@ app.controller('LightController',['$scope','socket','$http', function($scope,soc
 
 $scope.lightCount = 0;
 $scope.isCollapsed = true;
-globalTimeout = '';
-
+clicked = false; 
 $scope.getLightsInfo = function(){
-	socket.emit('ready');
+  socket.emit('ready');
 
     socket.on('talk', function (data) {
 
-      if(angular.toJson($scope.lightResponse) !=  JSON.stringify(data.message))
+      if(angular.toJson($scope.lightResponse) !=  JSON.stringify(data.message) && clicked == false)
       {
-  	     $scope.lightResponse = data.message;
+         $scope.lightResponse = data.message;
          $scope.lightCount = data.message.length;
       }  
-      globalTimeout = window.setTimeout(function(){ 
-                        socket.emit('ready');
-                      },1000);
     });
 }
 
 $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
+  clicked = true;
   window.clearTimeout(globalTimeout);
   var switchedToState = 'on';
   if(state=='on')
@@ -41,9 +38,11 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
 
   var endPoint = (isGroup) ? 'groups/':'lights/';
   
+
   $http.put('http://10.14.12.150/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           socket.emit('ready');
+          clicked = false;
       });
 }
 
