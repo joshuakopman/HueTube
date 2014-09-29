@@ -40,8 +40,8 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
 
   $http.put('http://10.14.12.150/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
-          socket.emit('ready');
           clicked = false;
+          socket.emit('ready');
       });
 }
 
