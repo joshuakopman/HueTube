@@ -4,7 +4,7 @@ $scope.lightCount = 0;
 $scope.isCollapsed = true;
 clicked = false; 
 $scope.getLightsInfo = function(){
-  socket.emit('ready');
+    socket.emit('ready');
 
     socket.on('talk', function (data) {
 
@@ -12,7 +12,10 @@ $scope.getLightsInfo = function(){
       {
          $scope.lightResponse = data.message;
          $scope.lightCount = data.message.length;
-      }  
+      } 
+
+      socket.emit('ready'); 
+      
     });
 }
 
@@ -41,7 +44,6 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   $http.put('http://10.14.12.150/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
-          socket.emit('ready');
       });
 }
 
