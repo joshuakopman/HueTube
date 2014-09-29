@@ -18,7 +18,6 @@ $scope.getLightsInfo = function(){
 
 $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   clicked = true;
-  window.clearTimeout(globalTimeout);
   var switchedToState = 'on';
   if(state=='on')
   { 
