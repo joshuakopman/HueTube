@@ -29,9 +29,6 @@ RUN npm install
 RUN npm install forever -g
 
 #Expose port and run app
-EXPOSE 7076
-
-#Try to expose port for socket.io
-EXPOSE 7075
+EXPOSE 80
 
 CMD ["forever", "./app.js"]
