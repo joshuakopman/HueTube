@@ -10,10 +10,9 @@ var LightService = require('./services/LightService');
 var Config = require("./Config")
 var cors = require('cors')
 
-app.use(cors());
-
 app.http().io();
 
+app.use(cors());
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser());
