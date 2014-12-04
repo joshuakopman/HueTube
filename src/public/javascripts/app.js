@@ -9,5 +9,3 @@ var app = angular.module('lightApp', ['ngRoute','light','wakeup','colorpicker','
     $routeProvider.otherwise({redirectTo: '/'});
  
   }]);
-
-]);
