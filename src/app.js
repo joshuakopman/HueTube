@@ -8,7 +8,7 @@ var IndexController = require('./controllers/index');
 var LightController = require('./controllers/LightController');
 var LightService = require('./services/LightService');
 var Config = require("./Config")
-/*
+
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -17,7 +17,7 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 app.use(allowCrossDomain);
-*/
+
 app.http().io();
 
 app.use(favicon());
