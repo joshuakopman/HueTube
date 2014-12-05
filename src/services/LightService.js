@@ -10,34 +10,18 @@ function LightService(options){
 };
 
 
-LightService.prototype.BuildStateForLight = function(lightStateProperties,lightObject){
-	for(var prop in lightStateProperties)
-	{
-		if(prop == "on")
-		{
-			if(lightStateProperties["on"])
-				lightObject.State = "on";
-			else
-				lightObject.State = "off";
-		}
-		else if(prop == "hue")
-		{
-			lightObject.Hue = lightStateProperties["hue"];
-		}
-		else if(prop == "bri")
-		{
-			lightObject.Brightness = lightStateProperties["bri"];
-		}
-		else if(prop == "sat")
-		{
-			lightObject.Saturation = lightStateProperties["sat"];
-		}
-		else if(prop == "xy")
-		{
-			lightObject.x = lightStateProperties["xy"][0];
-			lightObject.y = lightStateProperties["xy"][1];
-		}
-	}
+LightService.prototype.BuildStateForLight = function(lightStateProperties,lightObject)
+{
+	if(lightStateProperties["on"])
+		lightObject.State = "on";
+	else
+		lightObject.State = "off";
+
+	lightObject.Hue = lightStateProperties["hue"];
+	lightObject.Brightness = lightStateProperties["bri"];
+	lightObject.Saturation = lightStateProperties["sat"];
+	lightObject.x = lightStateProperties["xy"][0];
+	lightObject.y = lightStateProperties["xy"][1];
 }
 
 LightService.prototype.BuildLightsResponse = function(BridgeLights){   
@@ -61,7 +45,7 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 	    lightObject.lightid = x;
 
 	    this.BuildStateForLight(lightItem.state, lightObject);
-	    
+
 		lightObject.Name = lightItem["name"];
 
 		var rgb = colorHelper.toRGB(lightObject.x,lightObject.y,lightObject.Brightness);
