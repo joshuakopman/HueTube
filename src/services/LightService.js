@@ -41,6 +41,9 @@ LightService.prototype.BuildStateForLight = function(lightStateProperties,lightO
 }
 
 LightService.prototype.BuildLightsResponse = function(Lights){   
+	
+	console.log('Started BuildLightsResponse: ' + new Date().toTimeString());
+
 	var lightsArray = new Array();
 	if(Lights != null)
 	{
@@ -69,6 +72,9 @@ LightService.prototype.BuildLightsResponse = function(Lights){
 			lightsArray.push(lightObject);
 		}
 	}
+
+    console.log('Ended BuildLightsResponse: ' + new Date().toTimeString());
+
 	return lightsArray;
 }
 
