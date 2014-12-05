@@ -1,5 +1,5 @@
 app.factory('socket', ['$rootScope', function ($rootScope) {
-  var socket = io.connect('http://' + server.address.address);
+  var socket = io.connect('http://' + window.location.hostname);
   return {
     on: function (eventName, callback) {
       socket.on(eventName, function () {  
