@@ -40,38 +40,36 @@ LightService.prototype.BuildStateForLight = function(lightStateProperties,lightO
 	}
 }
 
-LightService.prototype.BuildLightsResponse = function(Lights){   
+LightService.prototype.BuildLightsResponse = function(BridgeLights){   
 	
 	console.log('Started BuildLightsResponse: ' + new Date().toTimeString());
 
 	var lightsArray = new Array();
-	if(Lights != null)
-	{
-		var jsonLength = Object.keys(Lights).length;
-		var colorHelper = new ColorHelper();
-		for(var x = 1;x <= jsonLength;x++)
-		{
-			var lightItem = Lights[x.toString()];
-			var lightObject = new Light();
-		    lightObject.lightid = x;
-			for(var lightProp in lightItem)
-			{
-				if(lightProp == "state")
-				{
-					this.BuildStateForLight(lightItem[lightProp],lightObject);
-				}
-				else if(lightProp == "name")
-				{
-					lightObject.Name = lightItem["name"];
-				}
-			}
 
-			var rgb = colorHelper.toRGB(lightObject.x,lightObject.y,lightObject.Brightness);
-			var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
-			lightObject.Color = "#"+hex;
-			lightsArray.push(lightObject);
-		}
+	if(BridgeLights == null)
+		return lightsArray;
+	
+
+	var jsonLength = Object.keys(BridgeLights).length;
+	var colorHelper = new ColorHelper();
+	console.log('Lights ' + jsonLength);
+
+	for(var x = 1;x <= jsonLength;x++)
+	{
+		var lightItem = BridgeLights[x.toString()];
+		var lightObject = new Light();
+	    lightObject.lightid = x;
+
+	    this.BuildStateForLight(lightItem.state, lightObject);
+	    
+		lightObject.Name = lightItem["name"];
+
+		var rgb = colorHelper.toRGB(lightObject.x,lightObject.y,lightObject.Brightness);
+		var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
+		lightObject.Color = "#"+hex;
+		lightsArray.push(lightObject);
 	}
+
 
     console.log('Ended BuildLightsResponse: ' + new Date().toTimeString());
 
