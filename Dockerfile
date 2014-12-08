@@ -14,10 +14,10 @@ RUN apt-get install -y nodejs npm git git-core
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 #Pull Latest Code From Repo
-RUN git clone http://github.com/hugeinc/huetubue.git
+RUN git clone http://github.com/aesopwaits/huetube.git
 
 #Set working directory
-WORKDIR /huetubue/src/
+WORKDIR /huetube/src/
 
 #Set NPM Repo location
 RUN npm config set registry http://registry.npmjs.org/
