@@ -25,39 +25,28 @@ LightService.prototype.BuildStateForLight = function(lightStateProperties,lightO
 }
 
 LightService.prototype.BuildLightsResponse = function(BridgeLights){   
-	
-	console.log('Started BuildLightsResponse: ' + new Date().toTimeString());
-
-	var lightsArray = new Array();
+	var clientLights = new Array();
 
 	if(BridgeLights == null)
-		return lightsArray;
-	
+		return clientLights;
 
 	var jsonLength = Object.keys(BridgeLights).length;
 	var colorHelper = new ColorHelper();
-	console.log('Lights ' + jsonLength);
 
 	for(var x = 1;x <= jsonLength;x++)
 	{
-		var lightItem = BridgeLights[x.toString()];
-		var lightObject = new Light();
-	    lightObject.lightid = x;
-
-	    this.BuildStateForLight(lightItem.state, lightObject);
-
-		lightObject.Name = lightItem["name"];
-
-		var rgb = colorHelper.toRGB(lightObject.x,lightObject.y,lightObject.Brightness);
+		var bridgeLight = BridgeLights[x.toString()];
+		var clientLight = new Light();
+	    clientLight.lightid = x;
+	    this.BuildStateForLight(bridgeLight.state, clientLight);
+		clientLight.Name = bridgeLight["name"];
+		var rgb = colorHelper.toRGB(clientLight.x,clientLight.y,clientLight.Brightness);
 		var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
-		lightObject.Color = "#"+hex;
-		lightsArray.push(lightObject);
+		clientLight.Color = "#"+hex;
+		clientLights.push(clientLight);
 	}
 
-
-    console.log('Ended BuildLightsResponse: ' + new Date().toTimeString());
-
-	return lightsArray;
+	return clientLights;
 }
 
 LightService.prototype.getLights = function(callback){
