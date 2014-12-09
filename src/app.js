@@ -1,10 +1,6 @@
 app = require('express.io')();
 var path = require('path');
-var favicon = require('static-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var IndexController = require('./controllers/index');
 var LightController = require('./controllers/LightController');
 var LightService = require('./services/LightService');
 var Config = require("./Config")
@@ -13,10 +9,7 @@ var cors = require('cors')
 app.http().io();
 
 app.use(cors());
-app.use(favicon());
-app.use(logger('dev'));
 app.use(bodyParser());
-app.use(cookieParser());
 app.use(require('express.io').static(path.join(__dirname, 'public')));
 
 lightController = new LightController(new LightService());
