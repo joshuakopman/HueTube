@@ -28,6 +28,12 @@ RUN npm install
 #Install global forever module
 RUN npm install forever -g
 
+#Install global jasmine module
+RUN npm install jasmine-node -g
+
+#Run unit tests
+RUN jasmine-node --junitreport spec/
+
 #Expose port and run app
 EXPOSE 7076
 
