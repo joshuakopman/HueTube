@@ -48,6 +48,10 @@ input.lightSwitchLabel{
 .lightStateCollapsed{
 	min-height:50px;
 }
+colorPanel, .lightStateCollapsed>div{
+	visibility: hidden;
+}
+
 .lightSwitch{
 	float:left;
 	margin-left:129px;
