@@ -15,8 +15,8 @@
 			  		<div class="lightName" ng-style="{'background-color' : light.Color}" ng-cloak>
 			  	     {{light.Name}}
 			  		</div>
+			  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
 					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'" ng-cloak>
-		    	     <light toggle-Light="toggle" model="light" class="lightSwitch"></light>
 		    	   	 <colorpicker collapse="isCollapsed" set-color="toggle" lightid="{{light.lightid}}"></colorpicker>
 	   				</div>
 		    	</div>
