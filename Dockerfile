@@ -13,11 +13,11 @@ RUN apt-get install -y nodejs npm git git-core
 #Symbolic Node link
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
-#Pull Latest Code From Repo
-RUN git clone http://github.com/aesopwaits/huetube.git
+#Add project to container
+ADD . /
 
 #Set working directory
-WORKDIR /huetube/src/
+WORKDIR /src/
 
 #Set NPM Repo location
 RUN npm config set registry http://registry.npmjs.org/
