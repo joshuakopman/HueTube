@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Light Service" errors="0" tests="2" failures="0" time="0.006" timestamp="2014-12-09T15:22:34">
+  <testcase classname="Light Service" name="maps properties from the bridge API light model to node light model" time="0.003"></testcase>
+  <testcase classname="Light Service" name="Build Lights Response" time="0.001"></testcase>
+</testsuite>
+</testsuites>
