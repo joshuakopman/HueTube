@@ -1,4 +1,4 @@
-function Light(id,Name,State,Hue,Saturation,Brightness,Color){
+function Light(id,Name,State,Hue,Saturation,Brightness,Color,ColorName){
 	this.lightid = id;
 	this.Name = Name;
 	this.State = State;
@@ -6,6 +6,7 @@ function Light(id,Name,State,Hue,Saturation,Brightness,Color){
 	this.Saturation = Saturation;
 	this.Brightness = Brightness;
 	this.Color = Color;
+	this.ColorName = ColorName
 };
 
 module.exports = Light;

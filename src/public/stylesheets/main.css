@@ -11,27 +11,32 @@
 .lightInfoDiv{
 	margin:15px;
 	margin-bottom:20px;
-	background-color:grey;
+	background-color: grey;
 	padding:5px;
 	padding-top:15px;
 	padding-bottom:40px;
-	width:320px;
+	width: 262px;
 }
 .lightInfoDivCollapsed{
 	margin:15px;
-	margin-bottom:20px;
+	margin-bottom: 12px;
 	background-color:grey;
-	padding-top:15px;
-	padding:5px;
-	width:320px;
+	padding-top: 17px;
+	padding: 5px;
+	width: 262px;
+	padding-bottom:12px;
 }
 .lightName{
 	font-weight:bold;
-	font-size:20px;
-	-webkit-text-stroke: 1px white;
-	padding:3px;
-	width:237px;
+	font-size: 20px;
+	/* -webkit-text-stroke: 1px white; */
+	padding: 4px;
+	width: 200px;
 	margin:0px auto;
+	margin-top: 7px;
+	/* border-radius: 34px; */
+	color: white;
+	text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }
 #lightDashboardTitle{
 	font-weight:bold;
@@ -44,10 +49,10 @@ input.lightSwitchLabel{
 	margin:5px;
 }
 .lightState{
-	min-height:80px;
+	min-height: 36px;
 }
 .lightStateCollapsed{
-	min-height:50px;
+	/* min-height: 50px; */
 }
 colorPanel, .lightStateCollapsed>div{
 	visibility: hidden;
@@ -55,7 +60,8 @@ colorPanel, .lightStateCollapsed>div{
 
 .lightSwitch{
 	float:left;
-	margin-left:129px;
+	margin-left: 60px;
+	margin-top: 40px;
 }
 .colorWheel{
 	position:relative;
@@ -107,7 +113,7 @@ colorPanel, .lightStateCollapsed>div{
 	font-style:normal;
 	height:40px;
 	line-height:40px;
-	width:106px;
+	width: 84px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #ffffff;
@@ -115,7 +121,7 @@ colorPanel, .lightStateCollapsed>div{
 	margin-top:15px;
 	cursor: pointer;
 	float:left;
-	margin-left:45px;
+	margin-left: 27px;
 }
 .allOff:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
@@ -131,20 +137,22 @@ colorPanel, .lightStateCollapsed>div{
 
 .colorPanel{
    border:2px solid black;
-   background-color:black;
+   background-color: lightgrey;
    float:left;
    margin-top:15px;
-   margin-left:20px;
+   margin-left: 7px;
    padding: 5px;
    padding-right:0px;
-   width:275px;
+   width: 239px;
    overflow:auto;
+   /* border-radius: 18px; */
 }
 
 .swatch{
-	width:30px;
-    height:30px;
-    border:1px solid black;
+	width: 25px;
+    
+	height: 25px;
+    
     border-radius:3em;
     float:left;
     margin:2px;
@@ -153,7 +161,7 @@ colorPanel, .lightStateCollapsed>div{
     display:block;
 }
 .swatch:hover{
-	border:2px solid white;
+	border:2px solid black;
 }
 
 .red{
@@ -237,4 +245,10 @@ colorPanel, .lightStateCollapsed>div{
 .btn:active {
 	position:relative;
 	top:1px;
+}
+
+.bulb{
+	height: 67px;
+	width: 80px;
+	margin-top: 13px;
 }

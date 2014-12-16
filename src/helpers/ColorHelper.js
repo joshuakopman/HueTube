@@ -69,6 +69,37 @@ ColorHelper.prototype.toRGB = function(x, y, bri) {
         }
 }
 
+ColorHelper.prototype.getColorName = function(x, y, bri,state) {
+    var r,g,b;
+
+    if(state=="off")
+       return 'black';
+
+    if (x>0 && x<=.2 && y<.07) {   //blues
+       return 'blue';
+    }
+    else if(x>.2 && x<= .3 && y>=.07 && y<=.2){ //violets
+       return 'violet';
+    }
+    else if(x >=.3 && x<=.47 && y>=.4 && y<=.52)  //greens
+    {
+        return 'green';
+    }
+    else if(x>=.4 && x<=.52 && y>=.4 && y<=.52) //yellows
+    {
+       return 'yellow';
+    }
+    else if(x > .52 && x <= .62 && y >.3 && y<.4) //oranges
+    {
+        return 'orange';
+    }
+    else if(x >.62 && y>.3 && y<.4) //reds
+    {
+        return 'red';
+    }
+
+    return 'white';
+}
 
 
 

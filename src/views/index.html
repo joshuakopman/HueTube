@@ -12,9 +12,10 @@
 		<div id="lightControllerDiv">
 			<div class="lightInfoContainer" ng-init="getLightsInfo()" ng-cloak>
 			  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
-			  		<div class="lightName" ng-style="{'background-color' : light.Color}" ng-cloak>
+			  		<div class="lightName"  ng-cloak>
 			  	     {{light.Name}}
 			  		</div>
+			  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
 			  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
 					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'" ng-cloak>
 		    	   	 <colorpicker collapse="isCollapsed" set-color="toggle" lightid="{{light.lightid}}"></colorpicker>

@@ -43,6 +43,7 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 		var rgb = colorHelper.toRGB(clientLight.x,clientLight.y,clientLight.Brightness);
 		var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
 		clientLight.Color = "#"+hex;
+		clientLight.ColorName = colorHelper.getColorName(clientLight.x,clientLight.y,clientLight.Brightness,clientLight.State);
 		clientLights.push(clientLight);
 	}
 
