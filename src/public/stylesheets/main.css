@@ -136,29 +136,33 @@ colorPanel, .lightStateCollapsed>div{
 }
 
 .colorPanel{
-   border:2px solid black;
-   background-color: lightgrey;
+   border: 3px solid darkgrey;
+   /* background-color: lightgrey; */
    float:left;
    margin-top:15px;
-   margin-left: 7px;
-   padding: 5px;
+   margin-left: 23px;
+   /* padding: 5px; */
    padding-right:0px;
-   width: 239px;
+   /* width: 239px; */
    overflow:auto;
    /* border-radius: 18px; */
 }
 
 .swatch{
-	width: 25px;
+	width: 29px;
     
-	height: 25px;
+	height: 29px;
     
-    border-radius:3em;
+    
+	/* border-radius:3em; */
     float:left;
-    margin:2px;
-    margin-right:5px;
+    
+	/* margin:2px; */
+    
+	/* margin-right:5px; */
     cursor: pointer;
     display:block;
+	/* margin-right: 0px; */
 }
 .swatch:hover{
 	border:2px solid black;
