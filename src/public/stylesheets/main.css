@@ -9,22 +9,21 @@
 
 }
 .lightInfoDiv{
-	margin:15px;
-	margin-bottom:20px;
+	margin: 10px;
 	background-color: grey;
 	padding:5px;
-	padding-top:15px;
-	padding-bottom:40px;
+	padding-top: 5px;
+	padding-bottom: 29px;
 	width: 262px;
 }
 .lightInfoDivCollapsed{
-	margin:15px;
-	margin-bottom: 12px;
+	margin: 10px;
+	margin-bottom: 9px;
 	background-color:grey;
 	padding-top: 17px;
 	padding: 5px;
 	width: 262px;
-	padding-bottom:12px;
+	padding-bottom: 12px;
 }
 .lightName{
 	font-weight:bold;
@@ -33,7 +32,7 @@
 	padding: 4px;
 	width: 200px;
 	margin:0px auto;
-	margin-top: 7px;
+	margin-top: 0px;
 	/* border-radius: 34px; */
 	color: white;
 	text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
@@ -61,7 +60,7 @@ colorPanel, .lightStateCollapsed>div{
 .lightSwitch{
 	float:left;
 	margin-left: 60px;
-	margin-top: 40px;
+	margin-top: 24px;
 }
 .colorWheel{
 	position:relative;
@@ -254,5 +253,5 @@ colorPanel, .lightStateCollapsed>div{
 .bulb{
 	height: 67px;
 	width: 80px;
-	margin-top: 13px;
+	margin-top: 0px;
 }
