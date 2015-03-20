@@ -16,7 +16,7 @@ npm install
 node ./app.js
 
 Node is running on port 7076. 
-Ports and bridge IP are configurable via src/Config.js within node. 
-Be sure to update the angular socketFactory with the corresponding socket.io port. 
+Bridge port, IP, and Hue Developer ID are all configurable via src/Config.js within node. 
+
 
 
