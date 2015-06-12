@@ -64,14 +64,22 @@ strong
 .toggle-bg input:checked ~ .switch {
   left: 0;
 }
+.toggle-bg input:checked ~ .switch-group {
+  left: 0;
+}
 .toggle-bg input ~ :checked ~ .switch {
   left: 1.18em;
 }
+
+.toggle-bg input ~ :checked ~ .switch-group {
+  left: 4.18em;
+}
+
 .toggle-bg input:checked {
   z-index: 0;
 }
 
-.switch {
+.switch,.switch-group {
   background: white;
   border-radius: 2em;
   border: 0.1em solid #d9d9d9;
@@ -88,10 +96,10 @@ strong
   z-index: 1;
   /* Remember, it must be below the invisible inputs */
 }
-.switch.on {
+.switch.on,.switch-group.on {
   box-shadow: -0.2em 0.2em 0.5em rgba(0, 0, 0, 0.06), 0.4em 0.4em 1.5em rgba(0, 0, 0, 0.08);
 }
-.switch.off {
+.switch.off,.switch-group.on {
   box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.06), -0.4em 0.4em 1.5em rgba(0, 0, 0, 0.08);
 }
 
@@ -105,6 +113,10 @@ strong
 }
 .toggle-alternate input ~ :checked ~ .switch {
   left: 2.46em;
+}
+
+.toggle-alternate input ~ :checked ~ .switch-group {
+  left: 4.46em;
 }
 
 .toggle-alternate label {

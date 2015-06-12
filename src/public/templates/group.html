@@ -1,0 +1,6 @@
+ <div class="toggle-bg toggle-alternate {{model.State}}" style="width: 88px;">
+	<label class="{{model.State}}">ALL {{model.State}}</label>
+	<input type="radio" name="toggleAll" ng-click="toggleLight(0,'off','','','','',true)" value="off" ng-model="model.State">
+	<input type="radio" name="toggleAll" ng-click="toggleLight(0,'on','','','','',true)" value="on" ng-model="model.State">
+	<span class="switch-group {{model.State}}"></span>
+</div>

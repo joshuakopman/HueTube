@@ -1,7 +1,5 @@
 FROM ubuntu:14.04
 
-# Install dependencies
-RUN apt-get update -y
 
 # Clear out node js naming conflict for ubuntu
 RUN apt-get --purge remove node

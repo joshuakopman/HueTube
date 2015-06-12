@@ -9,6 +9,15 @@ angular.module("light",["ng"]).directive("light",function(){
 	}
 });
 
+angular.module("group",["ng"]).directive("group",function(){
+	return{
+		restrict:"EA",
+		replace:!0,
+		scope:{model:"=",toggleLight:"="},
+	    templateUrl: 'templates/group.html'
+	}
+});
+
 angular.module("wakeup",["ng"]).directive("wakeup",function(){
 	return{
 		restrict:"EA",
