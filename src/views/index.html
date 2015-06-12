@@ -18,8 +18,9 @@
 			  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
 			  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
 					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'" ng-cloak>
-						 <colorpicker collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
-			    	   	 <brightness collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
+				    	 <colorpicker collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
+			    		 <brightness collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
+		    		</div>
 		    	</div>
 		    	<group toggle-Light="toggle" model="light" class="groupSwitch"></group>
 		    <!--	<div class="allOff" ng-click="toggle(0,'on','','','','',true)">
