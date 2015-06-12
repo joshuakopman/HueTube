@@ -260,3 +260,15 @@ colorPanel, .lightStateCollapsed>div{
 	width: 80px;
 	margin-top: 0px;
 }
+
+brightSlider, .lightStateCollapsed>div{
+	visibility: hidden;
+}
+
+.brightSlider{
+	float:left;
+	overflow:auto;
+	margin-top:5px;
+	max-width: 200px;
+	margin-left: 28px;
+}

@@ -34,7 +34,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   var lightStateChange = {};
       lightStateChange.state = switchedToState;
       lightStateChange.hue = hue;
-      lightStateChange.bri = bri;
+      lightStateChange.bri =  parseInt(bri);
       lightStateChange.sat = sat;
       lightStateChange.effect = effect;
 
