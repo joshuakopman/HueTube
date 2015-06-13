@@ -46,7 +46,9 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
-          $scope.groupstate = state;
+          if(isGroup){
+            $scope.groupstate = state;
+          }
       });
 }
 
