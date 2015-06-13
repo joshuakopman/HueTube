@@ -65,7 +65,7 @@ strong
   left: 0;
 }
 .toggle-bg input:checked ~ .switch-group {
-  left: 0;
+  left: 4.4em;
 }
 .toggle-bg input ~ :checked ~ .switch {
   left: 1.18em;
@@ -116,7 +116,7 @@ strong
 }
 
 .toggle-alternate input ~ :checked ~ .switch-group {
-  left: 4.46em;
+  left: 0em;
 }
 
 .toggle-alternate label {
@@ -135,4 +135,23 @@ strong
 .toggle-bg label.off {
   right: .55em;
   color: #aaa;
+}
+label.off.group{
+  right: .6em;
+  color: #aaa;
+}
+
+label.on.group{
+  left: .75em;
+  color: white;
+  background-color: black;
+}
+
+.toggle-bg label.Lights {
+  right: .55em;
+  color: black;
+}
+
+#groupToggle{
+  width:90px;
 }

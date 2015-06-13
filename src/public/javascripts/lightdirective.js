@@ -13,7 +13,7 @@ angular.module("group",["ng"]).directive("group",function(){
 	return{
 		restrict:"EA",
 		replace:!0,
-		scope:{model:"=",toggleLight:"="},
+		scope:{model:"=",toggleLight:"=",viewgroupstate:"="},
 	    templateUrl: 'templates/group.html'
 	}
 });

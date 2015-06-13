@@ -2,7 +2,9 @@ app.controller('LightController',['$scope','socket','$http', function($scope,soc
 
 $scope.lightCount = 0;
 $scope.isCollapsed = true;
+$scope.groupstate = "Lights";
 clicked = false; 
+
 $scope.getLightsInfo = function(){
     socket.emit('ready');
 
@@ -44,6 +46,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
+          $scope.groupstate = state;
       });
 }
 

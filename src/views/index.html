@@ -22,10 +22,7 @@
 			    		 <brightness collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
 		    		</div>
 		    	</div>
-		    	<group toggle-Light="toggle" model="light" class="groupSwitch"></group>
-		    <!--	<div class="allOff" ng-click="toggle(0,'on','','','','',true)">
-		    		All Off
-		    	</div>-->
+		    	<group viewgroupstate="groupstate" toggle-Light="toggle" class="groupSwitch"></group>
 	   			<wakeup class="btn" wake-alert="wakeUp()"></wakeup>
 	   			<div ng-click="isCollapsed = !isCollapsed" class="btn colorIcon">
 	   				<img src="images/colorpicker.png" class="colorIconImg"/>
