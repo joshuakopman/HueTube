@@ -1,1 +1,1 @@
-<input id="brightSlider" type="range" min="0" max="255" value="{{model.Brightness}}" step="5" ng-model="model.Brightness" ng-change="setColor(lightid,'off',model.Hue,model.Brightness,model.Saturation,'')" />
+<input id="brightSlider" type="range" min="0" max="255"  step="5" ng-init="value = model.Brightness" ng-model="value" ng-mouseup="setColor(lightid,'off',model.Hue,value,model.Saturation,'')" />
