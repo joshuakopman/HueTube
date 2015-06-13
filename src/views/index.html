@@ -7,19 +7,19 @@
 	<link rel="stylesheet" href="/stylesheets/main.css">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>	
-	<div id="contentDiv" ng-controller="LightController" >
+<body ng-cloak>	
+	<div id="contentDiv" ng-controller="LightController">
 		<div id="lightControllerDiv">
-			<div class="lightInfoContainer" ng-init="getLightsInfo()" ng-cloak>
+			<div class="lightInfoContainer" ng-init="getLightsInfo()" >
 			  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
-			  		<div class="lightName"  ng-cloak>
+			  		<div class="lightName">
 			  	     {{light.Name}}
 			  		</div>
 			  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
 			  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
-					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'" ng-cloak>
-				    	 <colorpicker collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
-			    		 <brightness collapse="isCollapsed" set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
+					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'">
+				    	 <colorpicker set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
+			    		 <brightness set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
 		    		</div>
 		    	</div>
 		    	<group viewgroupstate="groupstate" toggle-Light="toggle" class="groupSwitch"></group>

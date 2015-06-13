@@ -53,9 +53,6 @@ input.lightSwitchLabel{
 .lightStateCollapsed{
 	/* min-height: 50px; */
 }
-colorPanel, .lightStateCollapsed>div{
-	visibility: hidden;
-}
 
 .lightSwitch{
 	float:left;
@@ -261,14 +258,23 @@ colorPanel, .lightStateCollapsed>div{
 	margin-top: 0px;
 }
 
-brightSlider, .lightStateCollapsed>div{
-	visibility: hidden;
+.lightStateCollapsed>div{
+	display: none;
 }
 
-.brightSlider{
+.lightState input#brightSlider{
+	display: block;
+}
+
+#brightSlider{
+	display: none;
 	float:left;
 	overflow:auto;
 	margin-top:5px;
 	max-width: 200px;
 	margin-left: 28px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
 }
