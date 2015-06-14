@@ -34,10 +34,23 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.3/socket.io.min.js"></script>
     <script src="/javascripts/lightdirective.js"></script>
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/socketFactory.js"></script>
     <script src="/javascripts/lightController.js"></script>
 </body>
 </html>
+
+<!--
+this is insane
+
+page rendered and socket events populate reponse from API and bind to view, rendering the brightness directive.
+Ng-init sets a variable called dimmerValue to the current model.Brightness of each light.
+Dragging the slider causes ng-model to bind the value of the slider to the variable dimmerValue.
+On mouse up, the API passed the new dimmerValue that the user chooses.
+The socket events then detect a change in the response versus what is rendered in the DOM, binds the updated json to the view.
+The change in the binded view model causes the brightness directive to re-render.
+This re-rendering calls ng-init again, and the flow is repeated with the dimmerValue variable now containing the new model brightness.
+
+-->

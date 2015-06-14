@@ -1,4 +1,5 @@
-app = require('express.io')();
+var express = require('express');
+var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var LightController = require('./controllers/LightController');
@@ -6,58 +7,22 @@ var LightService = require('./services/LightService');
 var Config = require("./Config")
 var cors = require('cors')
 
-app.http().io();
-
 app.use(cors());
 app.use(bodyParser());
-app.use(require('express.io').static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.disable('etag');
 
-lightController = new LightController(new LightService());
-lightController.BuildRouting();
+var server = app.listen(Config.node.port, function() { });
 
-// view engine setup
-app.set('views', __dirname + '/views/');
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'jade');
-
-
-app.get('/', function(req, res) {
-    res.render('index.html');
-});
-//app.use('/', routes);
-//app.use('/lights', lights);
-
-/// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+app.get('/', function(req, res){
+  res.sendfile('index.html');
 });
 
-/// error handlers
+var io = require('socket.io').listen(server);
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+io.sockets.on('connection', function (newSocket){
+	new LightController(new LightService()).BuildRouting(app,newSocket);
 });
 
-module.exports = app;
 
-app.listen(Config.node.port);
+//app.use(require('express.io').basicAuth('testUser', 'testPass'));

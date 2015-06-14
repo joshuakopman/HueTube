@@ -2,7 +2,7 @@ function LightController(LightService){
 	lightService = LightService;
 };
 
-LightController.prototype.BuildRouting = function(){
+LightController.prototype.BuildRouting = function(app,socket){
 
 app.get('/lights', function(req, res) {
   lightService.getLights(function(statusCode,result){
@@ -28,16 +28,15 @@ app.put('/groups/:id', function(req, res) {
     });
  // }
 });
-
 /*Websockets lights listing */
-app.io.route('ready', function(req) {
+  socket.on('ready', function() {
       lightService.getLights(function(statusCode,result){
-        req.io.emit('talk',{
-        message: result
-    })
+        socket.emit('talk',
+        {
+          message: result
+        })
+      });
   });
-})
-
 
 }
 
