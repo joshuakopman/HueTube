@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var LightController = require('./controllers/LightController');
+var WemoController = require('./controllers/WemoController');
 var LightService = require('./services/LightService');
 var AuthService = require('./services/AuthService');
 var WemoService = require('./services/WemoService');
@@ -23,5 +24,6 @@ app.get('/', function(req, res){
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (newSocket){
-	new LightController(new LightService(),new WemoService()).BuildRouting(app,newSocket);
+	new LightController(new LightService()).BuildRouting(app,newSocket);
+	new WemoController(new WemoService()).BuildRouting(app,newSocket);
 });
