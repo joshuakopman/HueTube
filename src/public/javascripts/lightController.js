@@ -21,6 +21,15 @@ $scope.getLightsInfo = function(){
     });
 }
 
+$scope.getWemoInfo = function(){
+    socket.on('wemotalk', function (data) {
+      if(angular.toJson($scope.wemoResponse) !=  JSON.stringify(data.message) && clicked == false)
+      {
+          $scope.wemoResponse = data.message; 
+      }   
+    });
+}
+
 $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
   clicked = true;
   var switchedToState = 'on';
@@ -70,6 +79,13 @@ $scope.wakeUp = function(){
   }
 }
 
+$scope.switchState = function(){
+  clicked = true;
+  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/wemo/').
+      success(function(data) {
+          clicked = false;
+      });
+}
 
 }]);
 

@@ -8,34 +8,43 @@
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-cloak>	
-	<div id="contentDiv" ng-controller="LightController">
-		<div id="lightControllerDiv">
-			<div class="lightInfoContainer" ng-init="getLightsInfo()" >
-			  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
-			  		<div class="lightName">
-			  	     {{light.Name}}
-			  		</div>
-			  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
-			  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
-					<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'">
-				    	 <colorpicker set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
-			    		 <brightness set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
-		    		</div>
+	<div class="siteContainer">
+		<div class="firstHeader">Phillips Hue</div>
+		<div id="contentDiv" ng-controller="LightController">
+			<div id="lightControllerDiv">
+				<div class="lightInfoContainer" ng-init="getLightsInfo()" >
+				  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
+				  		<div class="lightName">
+				  	     {{light.Name}}
+				  		</div>
+				  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
+				  		<light toggle-Light="toggle" model="light" class="lightSwitch"></light>
+						<div ng-class="isCollapsed ? 'lightStateCollapsed' : 'lightState'">
+					    	 <colorpicker set-color="toggle" model="light" lightid="{{light.lightid}}"></colorpicker>
+				    		 <brightness set-color="toggle" model="light" lightid="{{light.lightid}}"></brightness>
+			    		</div>
+			    	</div>
+			    	<group viewgroupstate="groupstate" toggle-Light="toggle" class="groupSwitch" ng-init="isAuthenticated()"></group>
+			    	<div ng-click="isCollapsed = !isCollapsed" class="btn colorIcon">
+		   				<img src="images/colorpicker.png" class="colorIconImg"/>
+		   			</div>
 		    	</div>
-		    	<group viewgroupstate="groupstate" toggle-Light="toggle" class="groupSwitch"></group>
-	   			<wakeup class="btn" wake-alert="wakeUp()"></wakeup>
-	   			<div ng-click="isCollapsed = !isCollapsed" class="btn colorIcon">
-	   				<img src="images/colorpicker.png" class="colorIconImg"/>
-	   			</div>
-	    	</div>
-	    </div>
-	</div>  
- 	<!--<iframe class="videoStream" width="340" height="320" src="http://vaughnlive.tv/embed/video/aesopwaits?viewers=true&watermark=left&autoplay=true"scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe> -->
+		    </div>
+		</div>  
+	</div>
+	<div class="siteContainer">
+	 	<div class="secondHeader">WeMo</div>
+		<div ng-controller="LightController" style="float:left">
+		    <wemo ng-init="getWemoInfo()" model="wemoResponse" toggle="switchState"></wemo>
+		</div>
+	</div>
+
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.3/socket.io.min.js"></script>
+  	<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.3/socket.io.min.js"></script>
     <script src="/javascripts/lightdirective.js"></script>
+    <script src="/javascripts/wemodirective.js"></script>
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/socketFactory.js"></script>
     <script src="/javascripts/lightController.js"></script>

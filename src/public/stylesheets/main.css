@@ -1,6 +1,20 @@
+.firstHeader{
+	margin-left:100px;
+	font-weight:bold;
+}
+.secondHeader{
+	margin-left:10px;
+	font-weight:bold;
+}
+.siteContainer{
+  float: left;
+  margin: 0px auto;
+  width: 350px;
+}
 #contentDiv{
 	max-height: 500px;
 	width:800px;
+	display:block;
 }
 #lightControllerDiv{
 	text-align:center;

@@ -13,17 +13,8 @@ angular.module("group",["ng"]).directive("group",function(){
 	return{
 		restrict:"EA",
 		replace:!0,
-		scope:{model:"=",toggleLight:"=",viewgroupstate:"="},
+		scope:{toggleLight:"=",viewgroupstate:"="},
 	    templateUrl: 'templates/group.html'
-	}
-});
-
-angular.module("wakeup",["ng"]).directive("wakeup",function(){
-	return{
-		restrict:"EA",
-		replace:!0,
-		scope:{wakeAlert:"&"},
-		templateUrl: 'templates/wakeup.html'
 	}
 });
 
