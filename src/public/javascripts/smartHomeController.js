@@ -21,7 +21,10 @@ $scope.getLightsInfo = function(){
     });
 }
 
-$scope.getWemoInfo = function(){
+$scope.getWemoInfo = function(type){
+  if(type=='AC'){
+    return;
+  }
     socket.on('wemotalk', function (data) {
       if(angular.toJson($scope.wemoResponse) !=  JSON.stringify(data.message) && clicked == false)
       {
@@ -79,13 +82,19 @@ $scope.wakeUp = function(){
   }
 }
 
-$scope.switchState = function(){
+$scope.switchState = function(type){
   clicked = true;
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/wemo/').
       success(function(data) {
           clicked = false;
       });
 }
+
+$scope.switchACState = function(type){
+ //todo
+ console.log('Switching AC ON/OFF');
+}
+
 
 }]);
 
