@@ -1,4 +1,4 @@
-app.controller('LightController',['$scope','socket','$http', function($scope,socket,$http){
+app.controller('SmartHomeController',['$scope','socket','$http', function($scope,socket,$http){
 
 $scope.lightCount = 0;
 $scope.isCollapsed = true;

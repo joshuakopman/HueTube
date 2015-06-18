@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="lightApp">
 <head>
-	<title>Light Dashboard</title>
+	<title>SmartHome Dashboard</title>
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	<link rel="stylesheet" href="/stylesheets/iosslider.css">
 	<link rel="stylesheet" href="/stylesheets/main.css">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body ng-cloak>	
+<body ng-controller="SmartHomeController" ng-cloak>	
 	<div class="siteContainer">
 		<div class="firstHeader">Phillips Hue</div>
-		<div id="contentDiv" ng-controller="LightController">
+		<div id="contentDiv">
 			<div id="lightControllerDiv">
 				<div class="lightInfoContainer" ng-init="getLightsInfo()" >
 				  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
-				  		<div class="lightName">
+				  		<div class="itemName">
 				  	     {{light.Name}}
 				  		</div>
 				  		<img class="bulb" ng-src="images/{{light.ColorName}}.gif"/>
@@ -32,10 +32,13 @@
 		    </div>
 		</div>  
 	</div>
-	<div class="siteContainer">
+	<div class="siteContainer ">
 	 	<div class="secondHeader">WeMo</div>
-		<div ng-controller="LightController" style="float:left">
-		    <wemo ng-init="getWemoInfo()" model="wemoResponse" toggle="switchState"></wemo>
+		<div class="wemoContainer">
+			<div class="itemName">
+				Stereo
+			</div>
+		   <wemo ng-init="getWemoInfo()" model="wemoResponse" toggle="switchState"></wemo>
 		</div>
 	</div>
 
@@ -47,7 +50,7 @@
     <script src="/javascripts/wemodirective.js"></script>
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/socketFactory.js"></script>
-    <script src="/javascripts/lightController.js"></script>
+    <script src="/javascripts/smartHomeController.js"></script>
 </body>
 </html>
 

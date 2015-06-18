@@ -2,9 +2,9 @@
 
 var app = angular.module('lightApp', ['ngRoute','light','colorpicker','group','ui.bootstrap','brightness','wemo']).
  
-  config(['$routeProvider', function($routeProvider,LightController) {
+  config(['$routeProvider', function($routeProvider,SmartHomeController) {
  
-    $routeProvider.when('/', { controller: 'LightController'});
+    $routeProvider.when('/', { controller: 'SmartHomeController'});
  
     $routeProvider.otherwise({redirectTo: '/'});
  

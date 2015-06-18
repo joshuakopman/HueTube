@@ -1,1 +1,1 @@
-var Config = {};Config.hue = {};Config.node = {};Config.wemo = {};Config.hue.host = '98.14.237.235'Config.hue.port = 80;Config.wemo.port = 4000;Config.hue.uri = '/api/joshkopman';Config.node.port = 7076;module.exports = Config;
+var Config = {};Config.hue = {};Config.node = {};Config.wemo = {};Config.host = '98.14.237.235';Config.hue.uri = '/api/joshkopman';Config.hue.port = 80;Config.wemo.port = 4000;Config.node.port = 7076;module.exports = Config;

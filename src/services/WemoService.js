@@ -7,7 +7,7 @@ function WemoService(options){
 };
 
 WemoService.prototype.changeState = function(callback){
-	var wemoSwitch = new WeMo(Config.hue.host, Config.wemo.port);
+	var wemoSwitch = new WeMo(Config.host, Config.wemo.port);
 
 	wemoSwitch.getBinaryState(function(err, result) {
 		var onOff = 0;
@@ -21,7 +21,7 @@ WemoService.prototype.changeState = function(callback){
 }
 
 WemoService.prototype.getState = function(callback){
-	var wemoSwitch = new WeMo(Config.hue.host, Config.wemo.port);
+	var wemoSwitch = new WeMo(Config.host, Config.wemo.port);
 
 	wemoSwitch.getBinaryState(function(err, result) {
 		var state = '';
@@ -32,10 +32,6 @@ WemoService.prototype.getState = function(callback){
 		}
 		callback(state);
 	});
-}
-
-function printState(state){
-	console.log('The light is '+state);
 }
 
 module.exports = WemoService;

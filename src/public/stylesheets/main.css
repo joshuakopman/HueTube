@@ -39,7 +39,7 @@
 	width: 262px;
 	padding-bottom: 12px;
 }
-.lightName{
+.itemName{
 	font-weight:bold;
 	font-size: 20px;
 	/* -webkit-text-stroke: 1px white; */
@@ -291,4 +291,15 @@ input.lightSwitchLabel{
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
+}
+
+.wemoContainer{
+  margin: 10px;
+  background-color: grey;
+  padding: 5px;
+  padding-top: 10px;
+  width: 85px;
+  float: left;
+  margin-left: -7px;
+  padding-bottom: 30px;
 }

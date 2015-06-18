@@ -52,7 +52,7 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 
 LightService.prototype.getLights = function(callback){
 	var requestOptions = {
-	    host: Config.hue.host,
+	    host: Config.host,
 	    port: Config.hue.port,
 	    path: Config.hue.uri + '/lights',
 	    method: 'GET',
@@ -71,7 +71,7 @@ LightService.prototype.getLights = function(callback){
 
 LightService.prototype.setLightState = function(state,lightid,colorHue,colorBri,colorSat,effect,callback){
 	var requestOptions = {
-	    host: Config.hue.host,
+	    host: Config.host,
 	    port: Config.hue.port,
 	    path: Config.hue.uri + '/lights/'+lightid+'/state',
 	    method: 'PUT',
@@ -94,7 +94,7 @@ LightService.prototype.setLightState = function(state,lightid,colorHue,colorBri,
 
 LightService.prototype.setGroupState = function(state,groupid,colorHue,colorBri,colorSat,effect,callback){
 	var requestOptions = {
-	    host: Config.hue.host,
+	    host: Config.host,
 	    port: Config.hue.port,
 	    path: Config.hue.uri + '/groups/'+groupid+'/action',
 	    method: 'PUT',
