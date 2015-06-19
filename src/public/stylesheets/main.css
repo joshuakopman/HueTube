@@ -299,7 +299,7 @@ input.lightSwitchLabel{
 	display: none;
 	float:left;
 	overflow:auto;
-	margin-top:5px;
+	margin-top:15px;
 	max-width: 200px;
 }
 
@@ -340,7 +340,7 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:7px;
+	margin-top:15px;
 	margin-left:12px;
 	margin-right:5px
 }
@@ -350,7 +350,7 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:7px;
+	margin-top:15px;
 	margin-left:10px;
 }
 
@@ -647,7 +647,7 @@ input.lightSwitchLabel{
 	display: none;
 	float:left;
 	overflow:auto;
-	margin-top:5px;
+	margin-top:15px;
 	max-width: 200px;
 }
 
@@ -676,7 +676,7 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:7px;
+	margin-top:15px;
 	margin-left:12px;
 	margin-right:5px
 }
@@ -686,7 +686,7 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:7px;
+	margin-top:15px;
 	margin-left:10px;
 }
 }
