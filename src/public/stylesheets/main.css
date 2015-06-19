@@ -326,8 +326,8 @@ body{
 }
 .groupSwitch{
 	float:left;
-	margin-left: 126px;
-	margin-top: 24px;
+	margin-left: 100px;
+     margin-top: 48px;
 }
 .colorPanel{
    border: 3px solid darkgrey;
@@ -376,14 +376,14 @@ body{
 }
 .colorIcon{
 	cursor:pointer;
-	margin-left: 25px;
+	margin-left: 65px;
 	float: left;
 	margin-top: 22px;
 	padding:3px 5px !important;
 }
 .colorIconImg{
-	height:40px;
-	width:40px;
+	height:80px;
+	width:80px;
 }
 
 .btn{
@@ -406,7 +406,7 @@ body{
 	-webkit-border-bottom-left-radius:20px;
 	-moz-border-radius-bottomleft:20px;
 	border-bottom-left-radius:20px;
-	border-radius:30px !important;
+	border-radius:40px !important;
 }
 .btn:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
@@ -513,5 +513,8 @@ body{
 }
 .toggle-alternate input ~ :checked ~ .switch-group{
 	left: 0em !important;
+}
+.mobileWemoButton{
+	margin-left:45px !important;
 }
 }
