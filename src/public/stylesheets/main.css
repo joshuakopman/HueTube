@@ -55,7 +55,6 @@ body{
 	float: left;
 	margin-right:10px;
 	margin-bottom:10px;
-	border:solid 1px grey;
 }
 .itemName{
 	font-weight:bold;
@@ -338,6 +337,8 @@ input.lightSwitchLabel{
 }
 
 }
+
+
 
 
 @media all and (max-width: 600px) {
