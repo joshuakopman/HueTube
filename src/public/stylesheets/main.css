@@ -263,7 +263,7 @@ body{
 
 @media all and (max-width: 1024px) {
 .firstHeader{
-	margin-left:150px;
+	margin-left:200px;
 	font-weight:bold;
 }
 .secondHeader{
@@ -288,7 +288,8 @@ body{
 	padding:5px;
 	padding-top: 5px;
 	padding-bottom: 50px;
-	width: 370px;
+	width: 470px;
+	min-height:300px;
 }
 .lightInfoDivCollapsed{
 	margin: 10px;
@@ -296,8 +297,9 @@ body{
 	background-color:grey;
 	padding-top: 17px;
 	padding: 5px;
-	width: 370px;
+	width: 470px;
 	padding-bottom: 12px;
+	min-height:200px;
 }
 .itemName{
 	font-weight:bold;
@@ -320,11 +322,11 @@ body{
 .lightSwitch{
 	float:left;
 	margin-left: 90px;
-	margin-top: 24px;
+	margin-top: 50px;
 }
 .groupSwitch{
 	float:left;
-	margin-left: 95px;
+	margin-left: 126px;
 	margin-top: 24px;
 }
 .colorPanel{
@@ -332,7 +334,7 @@ body{
    /* background-color: lightgrey; */
    float:left;
    margin-top:15px;
-   margin-left: 75px;
+   margin-left: 53px;
    /* padding: 5px; */
    padding-right:0px;
    /* width: 239px; */
@@ -341,20 +343,11 @@ body{
 }
 
 .swatch{
-	width: 29px;
-    
-	height: 29px;
-    
-    
-	/* border-radius:3em; */
+	width: 50px;  
+	height: 50px;
     float:left;
-    
-	/* margin:2px; */
-    
-	/* margin-right:5px; */
     cursor: pointer;
     display:block;
-	/* margin-right: 0px; */
 }
 .swatch:hover{
 	border:2px solid black;
@@ -385,7 +378,7 @@ body{
 	cursor:pointer;
 	margin-left: 25px;
 	float: left;
-	margin-top: 8px;
+	margin-top: 22px;
 	padding:3px 5px !important;
 }
 .colorIconImg{
@@ -427,10 +420,10 @@ body{
 	top:1px;
 }
 
-.bulb{
-	height: 67px;
-	width: 80px;
-	margin-top: 0px;
+.bulb {
+  height: 100px;
+  width: 150px;
+  margin-top: 18px;
 }
 
 .lightStateCollapsed>div{
@@ -445,7 +438,7 @@ body{
 	display: none;
 	float:left;
 	overflow:auto;
-	margin-top:15px;
+	margin-top:36px;
 	max-width: 200px;
 }
 
@@ -467,15 +460,15 @@ body{
 	opacity:.1;
 }
 #bottomContainer{
-	margin-left:85px;
+	margin-left:140px;
 }
 .dimnessIcon{
 	width:10px;
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:18px;
-	margin-left:67px;
+	margin-top:40px;
+	margin-left:110px;
 	margin-right:5px
 }
 
@@ -484,9 +477,41 @@ body{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:17px;
+	margin-top:39px;
 	margin-left:7px;
 }
 
+.toggle-alternate{
+	width:7.48em  !important;
+}
+.toggle-bg{
+	height:3em !important;
+}
+.switch{
+	height:2.9em;
+	width:2.9em;
+}
 
+.toggle-alternate input ~ :checked ~ .switch {
+  left: 4.40em !important;
+}
+.toggle-alternate label {
+  font-size: 1.4em !important;
+}
+
+.switch-group{
+	height: 2.9em !important;
+  	width: 2.9em !important;
+}
+
+#groupToggle{
+	  width: 9.48em !important;
+}
+
+.toggle-bg input:checked ~ .switch-group {
+  left: 6.4em !important;
+}
+.toggle-alternate input ~ :checked ~ .switch-group{
+	left: 0em !important;
+}
 }
