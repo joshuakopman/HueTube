@@ -32,7 +32,7 @@ body{
 	background-color: #F8F8F8;
 	padding:5px;
 	padding-top: 5px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	width: 262px;
 	display:inline;
 	float: left;
@@ -292,7 +292,7 @@ input.lightSwitchLabel{
 }
 
 .lightState input#brightSlider{
-	display: block;
+	display: inline;
 }
 
 #brightSlider{
@@ -301,7 +301,6 @@ input.lightSwitchLabel{
 	overflow:auto;
 	margin-top:5px;
 	max-width: 200px;
-	margin-left: 28px;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -334,6 +333,25 @@ input.lightSwitchLabel{
 	width: 1150px;
 	margin:0px auto;
 	padding-bottom: 30px
+}
+
+.dimnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:7px;
+	margin-left:12px;
+	margin-right:5px
+}
+
+.brightnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:7px;
+	margin-left:10px;
 }
 
 }
@@ -622,7 +640,7 @@ input.lightSwitchLabel{
 }
 
 .lightState input#brightSlider{
-	display: block;
+	display: inline;
 }
 
 #brightSlider{
@@ -631,7 +649,6 @@ input.lightSwitchLabel{
 	overflow:auto;
 	margin-top:5px;
 	max-width: 200px;
-	margin-left: 28px;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -654,5 +671,22 @@ input.lightSwitchLabel{
 #bottomContainer{
 	margin-left:55px;
 }
+.dimnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:7px;
+	margin-left:12px;
+	margin-right:5px
+}
 
+.brightnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:7px;
+	margin-left:10px;
+}
 }

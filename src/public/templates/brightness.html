@@ -1,1 +1,5 @@
-<input id="brightSlider" type="range" min="0" max="255"  step="5" ng-init="value = model.Brightness" ng-model="value" ng-mouseup="setColor(lightid,'off',model.Hue,value,model.Saturation,'')" />
+<div>
+	<img class="dimnessIcon" ng-src="images/brightness-down.png"/>
+	<input id="brightSlider" type="range" orient="vertical" min="0" max="255"  step="5" ng-init="value = model.Brightness" ng-model="value" ng-mouseup="setColor(lightid,'off',model.Hue,value,model.Saturation,'')" />
+	<img class="brightnessIcon" ng-src="images/brightness-up.png"/>
+</div>
