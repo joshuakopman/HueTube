@@ -88,6 +88,7 @@ strong
   height: 1.9em;
   width: 1.9em;
   left: -.1em;
+  top: -.05em;
   position: relative;
   -moz-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
@@ -112,7 +113,7 @@ strong
   width: 6.24em;
 }
 .toggle-alternate input ~ :checked ~ .switch {
-  left: 2.46em;
+  left: 2.40em;
 }
 
 .toggle-alternate input ~ :checked ~ .switch-group {
