@@ -636,5 +636,7 @@ input.lightSwitchLabel{
 .ac{
 	opacity:.1;
 }
-
+#bottomContainer{
+	margin-left:55px;
+}
 }
