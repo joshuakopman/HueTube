@@ -9,13 +9,15 @@ body{
 	font-weight:bold;
 	margin-bottom:30px;
 	font-size:20px;
+	cursor:default;
 }
 .secondHeader{
 	text-align:center;
 	font-weight:bold;
-	margin-right:45px;
+	margin-left:10px;
 	margin-bottom:30px;
 	font-size:20px;
+	cursor:default;
 }
 .siteContainer{
   float: left;
@@ -58,14 +60,11 @@ body{
 .itemName{
 	font-weight:bold;
 	font-size: 20px;
-	/* -webkit-text-stroke: 1px white; */
 	padding: 4px;
 	width: 200px;
 	margin:0px auto;
 	margin-top: 0px;
-	/* border-radius: 34px; */
-	color: white;
-	text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+	color: black;
 	text-align: center;
 }
 #lightDashboardTitle{
@@ -80,9 +79,6 @@ input.lightSwitchLabel{
 }
 .lightState{
 	min-height: 36px;
-}
-.lightStateCollapsed{
-	/* min-height: 50px; */
 }
 
 .lightSwitch{
@@ -314,7 +310,7 @@ input.lightSwitchLabel{
 }
 
 .wemoContainer{
-  background-color: grey;
+  background-color: #F8F8F8;
   padding: 5px;
   padding-top: 10px;
   width: 200px;
