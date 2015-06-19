@@ -66,16 +66,7 @@ body{
 	color: black;
 	text-align: center;
 }
-#lightDashboardTitle{
-	font-weight:bold;
-	color:white;
-	margin-top:10px;
-	padding: 5px;
-	text-align:center;
-}
-input.lightSwitchLabel{
-	margin:5px;
-}
+
 .lightState{
 	min-height: 36px;
 }
@@ -91,77 +82,6 @@ input.lightSwitchLabel{
 	margin-top: 24px;
 	margin-bottom:20px;
 	display:inline;
-}
-.colorWheel{
-	position:relative;
-	bottom:32px;
-	left:80px;
-	vertical-align:middle; 
-	height:30px;
-	width:30px;
-}
-.colorWheel:hover .colorpicker{
-	background-color: green;
-    margin-left: 220px;
-    width:400px;
-    position: absolute;
-    color:black;
-    -webkit-transition-duration: 1.5s;
-    -moz-transition-duration: 1.5s;
-    -o-transition-duration: 1.5s;
-    transition-duration: 1.5s;
-}
-
-.allOff {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-	background-color:#ededed;
-	-webkit-border-top-left-radius:20px;
-	-moz-border-radius-topleft:20px;
-	border-top-left-radius:20px;
-	-webkit-border-top-right-radius:20px;
-	-moz-border-radius-topright:20px;
-	border-top-right-radius:20px;
-	-webkit-border-bottom-right-radius:20px;
-	-moz-border-radius-bottomright:20px;
-	border-bottom-right-radius:20px;
-	-webkit-border-bottom-left-radius:20px;
-	-moz-border-radius-bottomleft:20px;
-	border-bottom-left-radius:20px;
-	text-indent:0;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:normal;
-	font-style:normal;
-	height:40px;
-	line-height:40px;
-	width: 84px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ffffff;
-	margin-bottom:15px;
-	margin-top:15px;
-	cursor: pointer;
-	float:left;
-	margin-left: 27px;
-}
-.allOff:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-	background-color:#dfdfdf;
-}
-
-.allOff:active {
-	position:relative;
-	top:1px;
 }
 
 .colorPanel{
@@ -217,21 +137,6 @@ input.lightSwitchLabel{
 }
 .white{
 	background-color: white;
-}
-.wakeup{
-	height: 50px;
-	width: 50px;
-	display:block;
-	margin:0px auto;
-	cursor:pointer;
-	float:left;
-	margin-top:8px;
-	margin-left:29px;
-	padding-left:9px !important;
-}
-
-.videoStream{
-	margin-top:15px;
 }
 
 .colorIcon{
@@ -340,7 +245,7 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:15px;
+	margin-top:16px;
 	margin-left:12px;
 	margin-right:5px
 }
@@ -350,14 +255,11 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:15px;
-	margin-left:10px;
+	margin-top:17px;
+	margin-left:7px;
 }
 
 }
-
-
-
 
 @media all and (max-width: 1024px) {
 .firstHeader{
@@ -373,11 +275,7 @@ input.lightSwitchLabel{
   margin: 0px auto;
   width: 350px;
 }
-#contentDiv{
-	max-height: 500px;
-	width:800px;
-	display:block;
-}
+
 #lightControllerDiv{
 	text-align:center;
 	float:left;
@@ -414,16 +312,7 @@ input.lightSwitchLabel{
 	text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 	text-align: center;
 }
-#lightDashboardTitle{
-	font-weight:bold;
-	color:white;
-	margin-top:10px;
-	padding: 5px;
-	text-align:center;
-}
-input.lightSwitchLabel{
-	margin:5px;
-}
+
 .lightState{
 	min-height: 36px;
 }
@@ -441,78 +330,6 @@ input.lightSwitchLabel{
 	margin-left: 55px;
 	margin-top: 24px;
 }
-.colorWheel{
-	position:relative;
-	bottom:32px;
-	left:80px;
-	vertical-align:middle; 
-	height:30px;
-	width:30px;
-}
-.colorWheel:hover .colorpicker{
-	background-color: green;
-    margin-left: 220px;
-    width:400px;
-    position: absolute;
-    color:black;
-    -webkit-transition-duration: 1.5s;
-    -moz-transition-duration: 1.5s;
-    -o-transition-duration: 1.5s;
-    transition-duration: 1.5s;
-}
-
-.allOff {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-	background-color:#ededed;
-	-webkit-border-top-left-radius:20px;
-	-moz-border-radius-topleft:20px;
-	border-top-left-radius:20px;
-	-webkit-border-top-right-radius:20px;
-	-moz-border-radius-topright:20px;
-	border-top-right-radius:20px;
-	-webkit-border-bottom-right-radius:20px;
-	-moz-border-radius-bottomright:20px;
-	border-bottom-right-radius:20px;
-	-webkit-border-bottom-left-radius:20px;
-	-moz-border-radius-bottomleft:20px;
-	border-bottom-left-radius:20px;
-	text-indent:0;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:normal;
-	font-style:normal;
-	height:40px;
-	line-height:40px;
-	width: 84px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ffffff;
-	margin-bottom:15px;
-	margin-top:15px;
-	cursor: pointer;
-	float:left;
-	margin-left: 27px;
-}
-.allOff:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-	background-color:#dfdfdf;
-}
-
-.allOff:active {
-	position:relative;
-	top:1px;
-}
-
 .colorPanel{
    border: 3px solid darkgrey;
    /* background-color: lightgrey; */
@@ -567,22 +384,6 @@ input.lightSwitchLabel{
 .white{
 	background-color: white;
 }
-.wakeup{
-	height: 50px;
-	width: 50px;
-	display:block;
-	margin:0px auto;
-	cursor:pointer;
-	float:left;
-	margin-top:8px;
-	margin-left:29px;
-	padding-left:9px !important;
-}
-
-.videoStream{
-	margin-top:15px;
-}
-
 .colorIcon{
 	cursor:pointer;
 	margin-left: 25px;
@@ -686,7 +487,9 @@ input.lightSwitchLabel{
 	height:10px;
 	display:inline;
 	float:left;
-	margin-top:15px;
-	margin-left:10px;
+	margin-top:17px;
+	margin-left:7px;
 }
+
+
 }
