@@ -10,7 +10,6 @@
 <body ng-controller="SmartHomeController" ng-cloak>	
 	<div class="siteContainer">
 		<div class="firstHeader">Phillips Hue</div>
-		<div id="contentDiv">
 			<div id="lightControllerDiv">
 				<div class="lightInfoContainer" ng-init="getLightsInfo()" >
 				  	<div ng-class="isCollapsed ? 'lightInfoDivCollapsed' : 'lightInfoDiv'"  ng-repeat="light in lightResponse">
@@ -29,10 +28,9 @@
 		   				<img src="images/colorpicker.png" class="colorIconImg"/>
 		   			</div>
 		    	</div>
-		    </div>
 		</div>  
 	</div>
-	<div class="siteContainer ">
+	<div class="siteContainer" id="bottomContainer">
 	 	<div class="secondHeader">WeMo</div>
 		<div class="wemoContainer">
 			<div class="itemName">
