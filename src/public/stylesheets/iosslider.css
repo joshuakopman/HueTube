@@ -17,7 +17,7 @@ strong
 }
 .toggle-bg {
   background: white;
-  border-radius: 4em;
+  border-radius: 2em;
   border: 0.12em solid #e6e6e6;
   display: block;
   /* ...So that we can set a height and width */
@@ -81,7 +81,7 @@ strong
 
 .switch,.switch-group {
   background: white;
-  border-radius: 3em;
+  border-radius: 2em;
   border: 0.1em solid #d9d9d9;
   display: block;
   float: left;
@@ -110,7 +110,7 @@ strong
   width: 4.48em;
 }
 .toggle-alternate input {
-  width: 15.24em;
+  width: 6.24em;
 }
 .toggle-alternate input ~ :checked ~ .switch {
   left: 2.40em;
