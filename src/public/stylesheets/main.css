@@ -311,7 +311,7 @@ body{
 	font-size: 27px;
 	/* -webkit-text-stroke: 1px white; */
 	padding: 4px;
-	width: 300px;
+	/* width: 300px; */
 	margin:0px auto;
 	margin-top: 0px;
 	/* border-radius: 34px; */
@@ -457,7 +457,6 @@ body{
   padding: 5px;
   padding-top: 10px;
   width: 470px;
-  margin-left: -7px;
   padding-bottom: 120px;
 }
 
