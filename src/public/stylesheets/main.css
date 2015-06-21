@@ -263,12 +263,17 @@ body{
 
 @media all and (max-width: 1024px) {
 .firstHeader{
-	margin-left:200px;
+	margin-left: 130px;
 	font-weight:bold;
+	font-size: 18px;
 }
 .secondHeader{
 	font-weight:bold;
+	margin-left: 130px;
+	font-size: 18px;
 }
+
+.secondHeader {}
 .siteContainer{
   float: left;
   margin: 0px auto;
@@ -451,7 +456,7 @@ body{
   background-color: grey;
   padding: 5px;
   padding-top: 10px;
-  /* width: 412px; */
+  width: 470px;
   margin-left: -7px;
   padding-bottom: 120px;
 }
@@ -460,8 +465,8 @@ body{
 	opacity:.1;
 }
 #bottomContainer{
-	margin-top: 80px;
-	margin-left: 100px;
+	margin-top: 60px;
+	/* margin-left: 84px; */
 }
 .dimnessIcon{
 	width:10px;
