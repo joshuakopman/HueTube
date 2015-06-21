@@ -1,3 +1,4 @@
 src/node_modules
 src/.DS_STORE
-public/stylesheets/style.min.css
+src/public/stylesheets/style.min.css
+src/public/javascripts/scripts.min.js

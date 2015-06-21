@@ -1,6 +1,7 @@
 var gulp 	  = require('gulp');
     concat    = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css'),
+    uglify 	  = require('gulp-uglify')
 
 gulp.task('styles', function () {
     gulp.src(['./public/stylesheets/*.css'])
@@ -9,4 +10,12 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('./'))
 });
 
-gulp.task('default', ['styles']);
+
+gulp.task('scripts', function () {
+    gulp.src(['./public/javascripts/*.js'])
+        .pipe(uglify())
+        .pipe(concat('/public/javascripts/scripts.min.js'))
+        .pipe(gulp.dest('./'))
+});
+
+gulp.task('default', ['styles','scripts']);

@@ -3,7 +3,7 @@ app.controller('SmartHomeController',['$scope','socket','$http', function($scope
 $scope.lightCount = 0;
 $scope.isCollapsed = true;
 $scope.groupstate = "Lights";
-clicked = false; 
+var clicked = false; 
 
 $scope.getLightsInfo = function(){
     socket.emit('ready');
