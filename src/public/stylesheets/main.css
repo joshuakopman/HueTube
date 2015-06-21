@@ -285,11 +285,11 @@ body{
 .lightInfoDiv{
 	margin: 10px;
 	background-color: grey;
-	padding:5px;
-	padding-top: 5px;
-	padding-bottom: 50px;
+	padding: 5px;
+	/* padding-top: 5px; */
+	/* padding-bottom: 77px; */
 	width: 470px;
-	min-height:300px;
+	min-height: 320px;
 }
 .lightInfoDivCollapsed{
 	margin: 10px;
@@ -501,8 +501,9 @@ body{
 }
 
 .switch-group{
-	height: 2.9em !important;
-  	width: 2.9em !important;
+	height: 4.9em !important;
+  	
+	width: 4.9em !important;
 }
 
 #groupToggle{
@@ -510,7 +511,7 @@ body{
 }
 
 .toggle-bg input:checked ~ .switch-group {
-  left: 6.4em !important;
+  left: 10.4em !important;
 }
 .toggle-alternate input ~ :checked ~ .switch-group{
 	left: 0em !important;
