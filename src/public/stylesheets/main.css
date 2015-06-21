@@ -267,13 +267,13 @@ body{
 	font-weight:bold;
 }
 .secondHeader{
-	margin-left:75px;
 	font-weight:bold;
 }
 .siteContainer{
   float: left;
   margin: 0px auto;
   width: 350px;
+  text-align: center;
 }
 
 #lightControllerDiv{
@@ -303,10 +303,10 @@ body{
 }
 .itemName{
 	font-weight:bold;
-	font-size: 20px;
+	font-size: 27px;
 	/* -webkit-text-stroke: 1px white; */
 	padding: 4px;
-	width: 200px;
+	width: 300px;
 	margin:0px auto;
 	margin-top: 0px;
 	/* border-radius: 34px; */
@@ -326,8 +326,8 @@ body{
 }
 .groupSwitch{
 	float:left;
-	margin-left: 100px;
-     margin-top: 48px;
+	margin-left: 80px;
+	margin-top: 49px;
 }
 .colorPanel{
    border: 3px solid darkgrey;
@@ -376,14 +376,14 @@ body{
 }
 .colorIcon{
 	cursor:pointer;
-	margin-left: 65px;
+	margin-left: 25px;
 	float: left;
 	margin-top: 22px;
 	padding:3px 5px !important;
 }
 .colorIconImg{
-	height:80px;
-	width:80px;
+	height: 100px;
+	width: 100px;
 }
 
 .btn{
@@ -406,7 +406,7 @@ body{
 	-webkit-border-bottom-left-radius:20px;
 	-moz-border-radius-bottomleft:20px;
 	border-bottom-left-radius:20px;
-	border-radius:40px !important;
+	border-radius: 52px !important;
 }
 .btn:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
@@ -423,7 +423,7 @@ body{
 .bulb {
   height: 100px;
   width: 150px;
-  margin-top: 18px;
+  margin-top: 26px;
 }
 
 .lightStateCollapsed>div{
@@ -451,16 +451,17 @@ body{
   background-color: grey;
   padding: 5px;
   padding-top: 10px;
-  width: 200px;
+  /* width: 412px; */
   margin-left: -7px;
-  padding-bottom: 74px;
+  padding-bottom: 120px;
 }
 
 .ac{
 	opacity:.1;
 }
 #bottomContainer{
-	margin-left:140px;
+	margin-top: 80px;
+	margin-left: 100px;
 }
 .dimnessIcon{
 	width:10px;
@@ -482,21 +483,21 @@ body{
 }
 
 .toggle-alternate{
-	width:7.48em  !important;
+	width: 11.48em  !important;
 }
 .toggle-bg{
-	height:3em !important;
+	height: 5em !important;
 }
 .switch{
-	height:2.9em;
-	width:2.9em;
+	height: 4.9em;
+	width: 4.9em;
 }
 
 .toggle-alternate input ~ :checked ~ .switch {
-  left: 4.40em !important;
+  left: 6.4em !important;
 }
 .toggle-alternate label {
-  font-size: 1.4em !important;
+  font-size: 2.4em !important;
 }
 
 .switch-group{
@@ -505,7 +506,7 @@ body{
 }
 
 #groupToggle{
-	  width: 9.48em !important;
+	  width: 15.48em !important;
 }
 
 .toggle-bg input:checked ~ .switch-group {
@@ -513,8 +514,5 @@ body{
 }
 .toggle-alternate input ~ :checked ~ .switch-group{
 	left: 0em !important;
-}
-.mobileWemoButton{
-	margin-left:45px !important;
 }
 }
