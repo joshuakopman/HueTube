@@ -258,6 +258,9 @@ body{
 	margin-top:17px;
 	margin-left:7px;
 }
+.wemoButton{
+ 	margin-left:69px;
+}
 
 }
 
@@ -527,5 +530,7 @@ body{
  .toggle-alternate input {
   width: 15.24em !important;
  }
-
+ .wemoButton{
+ 	margin-left:89px;
+}
 }
