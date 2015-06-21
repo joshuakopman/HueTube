@@ -6,7 +6,7 @@ var gulp 	  = require('gulp');
 gulp.task('styles', function () {
     gulp.src(['./public/stylesheets/*.css'])
         .pipe(minifyCSS())
-        .pipe(concat('/public/stylesheets/dist/style.min.css'))
+        .pipe(concat('/public/stylesheets/dist/styles.min.css'))
         .pipe(gulp.dest('./'))
 });
 
