@@ -1,8 +1,16 @@
+*{
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 @media all and (min-width: 1024px) {
 body{
 	width:1200px !important;
 	margin:0px auto !important;
 	background-color: lightgrey!important;
+    font-size: 14px;
+}
+img{
+	vertical-align: middle;
 }
 .firstHeader{
 	text-align:center;
@@ -143,7 +151,7 @@ body{
 	cursor:pointer;
 	margin-left: 25px;
 	float: left;
-	margin-top: 13px;
+	margin-top: 17px;
 	padding:3px 5px !important;
 	display:inline;
 }
@@ -205,7 +213,7 @@ body{
 	float:left;
 	overflow:auto;
 	margin-top:15px;
-	max-width: 200px;
+	width: 200px;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -246,7 +254,7 @@ body{
 	display:inline;
 	float:left;
 	margin-top:16px;
-	margin-left:12px;
+	margin-left:13px;
 	margin-right:5px
 }
 
@@ -265,6 +273,12 @@ body{
 }
 
 @media all and (max-width: 1024px) {
+body{
+	  font-size: 14px;
+}
+img{
+	vertical-align: middle;
+}
 .firstHeader{
 	margin-left: 130px;
 	font-weight:bold;
@@ -276,7 +290,6 @@ body{
 	font-size: 18px;
 }
 
-.secondHeader {}
 .siteContainer{
   float: left;
   margin: 0px auto;
@@ -386,7 +399,7 @@ body{
 	cursor:pointer;
 	margin-left: 25px;
 	float: left;
-	margin-top: 22px;
+	margin-top: 35px;
 	padding:3px 5px !important;
 }
 .colorIconImg{
@@ -447,7 +460,7 @@ body{
 	float:left;
 	overflow:auto;
 	margin-top:36px;
-	max-width: 200px;
+	width: 300px;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -476,7 +489,7 @@ body{
 	display:inline;
 	float:left;
 	margin-top:40px;
-	margin-left:110px;
+	margin-left:70px;
 	margin-right:5px
 }
 
@@ -529,7 +542,7 @@ body{
  }
 
 .toggle-alternate input {
-  width: 15.24em !important;
+  width: 19.24em !important;
  }
 
 label.off.group{
@@ -537,6 +550,9 @@ label.off.group{
 }
  .wemoButton{
  	margin-left:150px;
+}
+.toggle-bg label.on,.toggle-bg label.Lights,.toggle-bg label.off{
+	top: 30px !important;
 }
 
 }

@@ -6,7 +6,7 @@ var gulp 	  = require('gulp');
 gulp.task('styles', function () {
     gulp.src(['./public/stylesheets/*.css'])
         .pipe(minifyCSS())
-        .pipe(concat('/public/stylesheets/style.min.css'))
+        .pipe(concat('/public/stylesheets/dist/style.min.css'))
         .pipe(gulp.dest('./'))
 });
 
@@ -14,7 +14,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
     gulp.src(['./public/javascripts/*.js'])
         .pipe(uglify())
-        .pipe(concat('/public/javascripts/scripts.min.js'))
+        .pipe(concat('/public/javascripts/dist/scripts.min.js'))
         .pipe(gulp.dest('./'))
 });
 
