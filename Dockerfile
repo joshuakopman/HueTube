@@ -28,6 +28,10 @@ RUN npm install
 #Install global forever module
 RUN npm install forever -g
 
+#Run Asset Minification
+RUN npm install gulp -g
+RUN gulp
+
 #Install global jasmine module
 RUN npm install jasmine-node -g
 
