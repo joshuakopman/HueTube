@@ -33,7 +33,7 @@ $scope.getWemoInfo = function(type){
     });
 }
 
-$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,endpoint,isAmbient){
+$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient){
   clicked = true;
   var switchedToState = 'on';
   if(state=='on')
@@ -57,12 +57,12 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,endpoint,isAmbient)
   if(isAmbient){
     endPoint = "ambiance/";
   }
-
+  console.log(endPoint);
+  console.log(lightStateChange);
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
-          console.log(isAmbient);
-          if(isGroup && typeof isAmbient !== 'undefined'){
+          if(isGroup && !isAmbient){
             $scope.groupstate = state;
           }
       });
