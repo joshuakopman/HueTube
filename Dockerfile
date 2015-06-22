@@ -28,15 +28,18 @@ RUN npm install
 #Install global forever module
 RUN npm install forever -g
 
-#Run Asset Minification
-RUN npm install gulp -g
-RUN gulp
+#Install Gulp
+RUN npm install gulp -g 
+RUN npm install --save-dev gulp
 
 #Install global jasmine module
 RUN npm install jasmine-node -g
 
 #Run unit tests
 RUN jasmine-node --junitreport spec/
+
+#Minify
+RUN gulp
 
 #Expose port and run app
 EXPOSE 7076

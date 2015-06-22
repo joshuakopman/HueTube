@@ -4,17 +4,17 @@ var gulp 	  = require('gulp');
     uglify 	  = require('gulp-uglify')
 
 gulp.task('styles', function () {
-    gulp.src(['./public/stylesheets/*.css'])
+    gulp.src(['./src/public/stylesheets/*.css'])
         .pipe(minifyCSS())
-        .pipe(concat('/public/stylesheets/dist/styles.min.css'))
+        .pipe(concat('/src/public/stylesheets/dist/styles.min.css'))
         .pipe(gulp.dest('./'))
 });
 
 
 gulp.task('scripts', function () {
-    gulp.src(['./public/javascripts/*.js'])
+    gulp.src(['./src/public/javascripts/*.js'])
         .pipe(uglify())
-        .pipe(concat('/public/javascripts/dist/scripts.min.js'))
+        .pipe(concat('/src/public/javascripts/dist/scripts.min.js'))
         .pipe(gulp.dest('./'))
 });
 
