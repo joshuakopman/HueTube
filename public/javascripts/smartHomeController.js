@@ -33,7 +33,7 @@ $scope.getWemoInfo = function(type){
     });
 }
 
-$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
+$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,endpoint,isAmbient){
   clicked = true;
   var switchedToState = 'on';
   if(state=='on')
@@ -54,11 +54,15 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
 
   var endPoint = (isGroup) ? 'groups/':'lights/';
   
+  if(isAmbient){
+    endPoint = "ambiance/";
+  }
 
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
-          if(isGroup){
+          console.log(isAmbient);
+          if(isGroup && typeof isAmbient !== 'undefined'){
             $scope.groupstate = state;
           }
       });
@@ -93,33 +97,6 @@ $scope.switchState = function(type){
 $scope.switchACState = function(type){
  //todo
  console.log('Switching AC ON/OFF');
-}
-
-
-$scope.triggerAmbiance = function(id,state,hue,bri,sat,effect,isGroup){
-  clicked = true;
-  var switchedToState = 'on';
-  if(state=='on')
-  { 
-    state = 'off';
-    switchedToState = 'off';
-  }
-  else
-  {
-    state = 'on';
-  }
-  var lightStateChange = {};
-      lightStateChange.state = switchedToState;
-      lightStateChange.hue = hue;
-      lightStateChange.bri =  bri;
-      lightStateChange.sat = sat;
-      lightStateChange.effect = effect;
-
-   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + 'ambiance/'+id, JSON.stringify(lightStateChange)).
-      success(function(data) {
-          console.log(data);
-          clicked = false;
-      });
 }
 
 
