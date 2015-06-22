@@ -1,4 +1,4 @@
-src/node_modules
-src/.DS_STORE
-src/public/stylesheets/dist
-src/public/javascripts/dist
+/node_modules
+/.DS_STORE
+/public/stylesheets/dist
+/public/javascripts/dist

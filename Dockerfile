@@ -1,36 +1,13 @@
-FROM ubuntu:14.04
-
-# Install dependencies
-RUN apt-get update -y
-
-# Clear out node js naming conflict for ubuntu
-RUN apt-get --purge remove node
-RUN apt-get --purge remove nodejs
-
-#install app dependencies
-RUN apt-get install -y nodejs npm git git-core 
-
-#Symbolic Node link
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+FROM node:0.10-onbuild
 
 #Pull Latest Code From Repo
-RUN git clone http://github.com/aesopwaits/huetube.git
-
-#Set working directory
-WORKDIR /huetube/src/
-
-#Set NPM Repo location
-RUN npm config set registry http://registry.npmjs.org/
-
-#Install node modules
-RUN npm install
+ADD . /
 
 #Install global forever module
 RUN npm install forever -g
 
 #Install Gulp
 RUN npm install gulp -g 
-RUN npm install --save-dev gulp
 
 #Install global jasmine module
 RUN npm install jasmine-node -g

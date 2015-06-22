@@ -12,6 +12,7 @@ $scope.getLightsInfo = function(){
 
       if(angular.toJson($scope.lightResponse) !=  JSON.stringify(data.message) && clicked == false)
       {
+        console.log(data.message);
          $scope.lightResponse = data.message;
          $scope.lightCount = data.message.length;
       } 
@@ -34,6 +35,7 @@ $scope.getWemoInfo = function(type){
 }
 
 $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup){
+  console.log('curr state'+state);
   clicked = true;
   var switchedToState = 'on';
   if(state=='on')
