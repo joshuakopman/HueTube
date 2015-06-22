@@ -13,9 +13,9 @@ app.put('/ambiance/:id', function(req, res) {
   new AuthService().PromptForCredentials(req,res,function(){
       wemoService.getState(function(state){
           if(state == "off"){
-             // wemoService.turnOnWemo(function(result){
+              wemoService.turnOnWemo(function(result){
                 self.turnOnLightsAndMusic(req,res);
-           //  });
+             });
           }else{
               self.turnOnLightsAndMusic(req,res);
           }
