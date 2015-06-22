@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('smartHomeApp', ['ngRoute','light','colorpicker','group','brightness','wemo']).
+var app = angular.module('smartHomeApp', ['ngRoute','light','colorpicker','group','brightness','wemo','ambient']).
  
   config(['$routeProvider', function($routeProvider,SmartHomeController) {
  

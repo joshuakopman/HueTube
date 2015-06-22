@@ -96,6 +96,33 @@ $scope.switchACState = function(type){
 }
 
 
+$scope.triggerAmbiance = function(id,state,hue,bri,sat,effect,isGroup){
+  clicked = true;
+  var switchedToState = 'on';
+  if(state=='on')
+  { 
+    state = 'off';
+    switchedToState = 'off';
+  }
+  else
+  {
+    state = 'on';
+  }
+  var lightStateChange = {};
+      lightStateChange.state = switchedToState;
+      lightStateChange.hue = hue;
+      lightStateChange.bri =  bri;
+      lightStateChange.sat = sat;
+      lightStateChange.effect = effect;
+
+   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + 'ambiance/'+id, JSON.stringify(lightStateChange)).
+      success(function(data) {
+          console.log(data);
+          clicked = false;
+      });
+}
+
+
 }]);
 
 
