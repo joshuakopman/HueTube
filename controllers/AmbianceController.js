@@ -13,7 +13,7 @@ app.put('/ambiance/', function(req, res) {
   new AuthService().PromptForCredentials(req,res,function(){
       wemoService.getState(function(state){
           if(state == "off"){
-              wemoService.turnOn(function(result){
+              wemoService.turnOnWemo(function(result){
                 self.turnOnLightsAndMusic();
              });
           }else{
@@ -25,10 +25,9 @@ app.put('/ambiance/', function(req, res) {
 
 });
 
-
 }
 
-AmbianceController.prototype.turnOnLightsAndMusic = function(){
+AmbianceController.prototype.turnOnLightsAndMusic = function(req,res){
     spotifyService.startAirplay(function(){
       spotifyService.startSpotify(function(){
             lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
