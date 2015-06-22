@@ -7,21 +7,36 @@ function AmbianceController(LightService,WemoService,SpotifyService){
 };
 
 AmbianceController.prototype.BuildRouting = function(app,socket){
+var self = this;
 
 app.put('/ambiance/', function(req, res) {
   new AuthService().PromptForCredentials(req,res,function(){
-      wemoService.changeState(function(result){
-          lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
-            res.send(result);
-          });
+      wemoService.getState(function(state){
+          if(state == "off"){
+              wemoService.turnOn(function(result){
+                self.turnOnLightsAndMusic();
+             });
+          }else{
+              self.turnOnLightsAndMusic();
+          }
+      });
 
-          spotifyService.startAirplay();
-          spotifyService.startSpotify();
-     });
-   });
+  });
+
 });
 
 
 }
+
+AmbianceController.prototype.turnOnLightsAndMusic = function(){
+    spotifyService.startAirplay(function(){
+      spotifyService.startSpotify(function(){
+            lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
+              res.send(result);
+            });
+        });
+    });
+}
+
 
 module.exports = AmbianceController;
