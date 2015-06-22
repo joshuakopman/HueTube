@@ -35,7 +35,6 @@ SpotifyService.prototype.startSpotify = function(songURI,callback){
 	        'Content-Type': 'application/json'
 	    },
     };
-    console.log(songURI);
     this.options = requestOptions;
     this.getJSON(function(statusCode,data){
     	callback(data);
