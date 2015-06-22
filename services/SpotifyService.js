@@ -27,7 +27,7 @@ SpotifyService.prototype.startAirplay = function(callback){
 
 SpotifyService.prototype.startSpotify = function(songURI,callback){
 	var requestOptions = {
-	    host: Config.spotify.host,
+	    host: Config.host,
 	    port: Config.spotify.port,
 	    path: Config.spotify.uri,
 	    method: 'POST',
