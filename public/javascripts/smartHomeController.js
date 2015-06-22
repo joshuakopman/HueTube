@@ -33,7 +33,7 @@ $scope.getWemoInfo = function(type){
     });
 }
 
-$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient){
+$scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient,songURI){
   clicked = true;
   var switchedToState = 'on';
   if(state=='on')
@@ -57,6 +57,11 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient){
   if(isAmbient){
     endPoint = "ambiance/";
   }
+
+  if(songURI){
+    lightStateChange.songURI = songURI;
+  }
+
   console.log(endPoint);
   console.log(lightStateChange);
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
