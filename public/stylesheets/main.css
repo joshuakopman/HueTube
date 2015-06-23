@@ -274,6 +274,10 @@ img{
   margin-left: 470px;
   background-color: red;
   text-align: center;
+  cursor:pointer;
+}
+.ambiance:hover{
+	background-color: violet !important;
 }
 
 }
@@ -559,6 +563,17 @@ label.off.group{
 }
 .toggle-bg label.on,.toggle-bg label.Lights,.toggle-bg label.off{
 	top: 30px !important;
+}
+
+.ambiance{
+  margin-left: 470px;
+  background-color: red !important;
+  text-align: center;
+  cursor: pointer !important;
+}
+
+.ambiance:hover{
+	background-color: violet !important;
 }
 
 }
