@@ -8,21 +8,19 @@ function SpotifyService(options){
 };
 
 SpotifyService.prototype.startAirplay = function(callback){
-	/*var requestOptions = {
-	    host: Config.spotify.host,
-	    port: Config.hue.port,
-	    path: Config.hue.uri + '/airplay/',
-	    method: 'POST',
+	var requestOptions = {
+	    host: Config.host,
+	    port: Config.spotify.port,
+	    path: '/airplay',
+	    method: 'GET',	   
 	    headers: {
 	        'Content-Type': 'application/json'
-	    },
+	    }
     };
     this.options = requestOptions;
     this.getJSON(function(statusCode){
-		callback(statusCode);
-    });*/
-
-	callback();
+    	callback();
+    });
 }
 
 SpotifyService.prototype.startSpotify = function(songURI,callback){
