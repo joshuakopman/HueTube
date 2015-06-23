@@ -270,6 +270,12 @@ img{
  	margin-left:69px;
 }
 
+.ambiance{
+  margin-left: 470px;
+  background-color: red;
+  text-align: center;
+}
+
 }
 
 @media all and (max-width: 1024px) {
