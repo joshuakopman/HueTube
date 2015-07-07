@@ -1,7 +1,7 @@
 
 	
 lights = {
-    "1": {
+    "8": {
         "state": {
             "on": false,
             "bri": 254,
@@ -32,7 +32,7 @@ lights = {
             "8": "none"
         }
     },
-    "2": {
+    "9": {
         "state": {
             "on": false,
             "bri": 254,
@@ -63,7 +63,7 @@ lights = {
             "8": "none"
         }
     },
-    "3": {
+    "10": {
         "state": {
             "on": true,
             "bri": 254,

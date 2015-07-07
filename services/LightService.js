@@ -33,7 +33,7 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 	var jsonLength = Object.keys(BridgeLights).length;
 	var colorHelper = new ColorHelper();
 
-	for(var x = 8;x < jsonLength + 8;x++)
+	for(var x = 8;x <= jsonLength + 8;x++)
 	{
 		var bridgeLight = BridgeLights[x.toString()];
 		var clientLight = new Light();
@@ -46,6 +46,7 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 		clientLight.ColorName = colorHelper.getColorName(clientLight.x,clientLight.y,clientLight.Brightness,clientLight.State);
 		clientLights.push(clientLight);
 	}
+	console.log(clientLights);
 	return clientLights;
 }
 
