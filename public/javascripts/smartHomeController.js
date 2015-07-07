@@ -9,7 +9,7 @@ $scope.getLightsInfo = function(){
     socket.emit('ready');
 
     socket.on('talk', function (data) {
-
+      console.log(data.message);
       if(angular.toJson($scope.lightResponse) !=  JSON.stringify(data.message) && clicked == false)
       {
          $scope.lightResponse = data.message;
