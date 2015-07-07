@@ -11,6 +11,6 @@ var LightServiceTestData = require("./LightServiceTestData.js");
       it('Build Lights Response', function() {
           var lightResponse = new LightService().BuildLightsResponse(lights);
           expect(lightResponse.length).toBe(3);
-          expect(lightResponse[0].Name).toBe(lights["1"].name);
+          expect(lightResponse[0].Name).toBe(lights["8"].name);
       });
   });
