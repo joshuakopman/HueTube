@@ -46,7 +46,6 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 		clientLight.ColorName = colorHelper.getColorName(clientLight.x,clientLight.y,clientLight.Brightness,clientLight.State);
 		clientLights.push(clientLight);
 	}
-	console.log(clientLights);
 	return clientLights;
 }
 
