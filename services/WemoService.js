@@ -1,15 +1,15 @@
 var WeMo = require('wemo')
 var Config = require("../Config");
 
-function WemoService(options){
-	this.options = options;
-	this.wemoSwitch = new WeMo(Config.host, Config.wemo.port);
+function WemoService(port){
+	console.log('Port: '+port);
+	this.wemoSwitch = new WeMo(Config.host, port);
 };
 
 WemoService.prototype.changeState = function(callback){
 	var self = this;
-
 	this.wemoSwitch.getBinaryState(function(err, result) {
+
 		var onOff = 0;
 		if(result == 0){
 			onOff = 1;

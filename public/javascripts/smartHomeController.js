@@ -20,11 +20,17 @@ $scope.getLightsInfo = function(){
     });
 }
 
-$scope.getWemoInfo = function(type){
-  if(type=='AC'){
-    return;
-  }
-    socket.on('wemotalk', function (data) {
+$scope.getWemoACInfo = function(){
+    socket.on('wemoactalk', function (data) {
+      if(angular.toJson($scope.wemoACResponse) !=  JSON.stringify(data.message) && clicked == false)
+      {
+          $scope.wemoACResponse = data.message; 
+      }   
+    });
+}
+
+$scope.getWemoStereoInfo = function(){
+    socket.on('wemostereotalk', function (data) {
       if(angular.toJson($scope.wemoResponse) !=  JSON.stringify(data.message) && clicked == false)
       {
           $scope.wemoResponse = data.message; 
@@ -92,15 +98,18 @@ $scope.wakeUp = function(){
 
 $scope.switchState = function(type){
   clicked = true;
-  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/wemo/').
+  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/stereo/').
       success(function(data) {
           clicked = false;
       });
 }
 
 $scope.switchACState = function(type){
- //todo
- console.log('Switching AC ON/OFF');
+  clicked = true;
+  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/ac/').
+      success(function(data) {
+          clicked = false;
+      });
 }
 
 

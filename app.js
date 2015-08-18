@@ -3,7 +3,8 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var LightController = require('./controllers/LightController');
-var WemoController = require('./controllers/WemoController');
+var WemoACController = require('./controllers/WemoACController');
+var WemoStereoController = require('./controllers/WemoStereoController');
 var AmbianceController = require('./controllers/AmbianceController');
 var LightService = require('./services/LightService');
 var AuthService = require('./services/AuthService');
@@ -27,6 +28,7 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (newSocket){
 	new LightController(new LightService()).BuildRouting(app,newSocket);
-	new WemoController(new WemoService()).BuildRouting(app,newSocket);
-	new AmbianceController(new LightService(),new WemoService(),new SpotifyService()).BuildRouting(app,newSocket);
+	new WemoACController(new WemoService(Config.wemo.AC.port)).BuildRouting(app,newSocket);
+	new WemoStereoController(new WemoService(Config.wemo.Stereo.port)).BuildRouting(app,newSocket);
+	new AmbianceController(new LightService(),new WemoService(Config.wemo.Stereo.port),new SpotifyService()).BuildRouting(app,newSocket);
 });

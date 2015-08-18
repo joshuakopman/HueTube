@@ -34,13 +34,13 @@
 			<div class="itemName">
 				Stereo
 			</div>
-		   <wemo ng-init="getWemoInfo()" model="wemoResponse" toggle="switchState"></wemo>
+		   <wemo ng-init="getWemoStereoInfo()" model="wemoResponse" toggle="switchState"></wemo>
 		</div>
 		<div class="wemoContainer ac">
 			<div class="itemName">
 			  	A/C
 			 </div>
-			 <wemo toggle="switchACState"></wemo>
+			 <wemo ng-init="getWemoACInfo()" model="wemoACResponse" toggle="switchACState"></wemo>
 		</div>
 		<div class="wemoContainer ambiance" ng-click="toggle(0,'off',50000,120,255,'',false,true,'spotify:track:0jHkgTtTaqg5LNCiYDQPUB');" >
 			<div class="itemName" >

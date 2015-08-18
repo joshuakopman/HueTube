@@ -237,7 +237,6 @@ img{
 }
 
 .ac{
-	opacity:.1;
 	margin-left:10px;
 }
 
@@ -487,9 +486,6 @@ img{
   padding-bottom: 120px;
 }
 
-.ac{
-	opacity:.1;
-}
 #bottomContainer{
 	margin-top: 60px;
 	/* margin-left: 84px; */
