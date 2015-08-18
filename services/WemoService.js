@@ -6,13 +6,14 @@ function WemoService(port){
 };
 
 WemoService.prototype.changeState = function(callback){
+	var self = this;
 	this.wemoSwitch.getBinaryState(function(err, result) {
 
 		var onOff = 0;
 		if(result == 0){
 			onOff = 1;
 		}
-    	wemoSwitch.setBinaryState(onOff, function(err, result) { // switch on 
+    	self.wemoSwitch.setBinaryState(onOff, function(err, result) { // switch on 
 			return callback(result);
 		});
 	});
