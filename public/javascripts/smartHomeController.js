@@ -67,8 +67,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient,songURI){
     lightStateChange.songURI = songURI;
   }
 
-  console.log(endPoint);
-  console.log(lightStateChange);
+
   $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
