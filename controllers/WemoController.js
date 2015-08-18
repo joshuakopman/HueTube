@@ -1,14 +1,14 @@
 var AuthService = require("../services/AuthService");
 var Config = require("../Config");
 
-function WemoStereoController(MyWemoService){
+function WemoController(MyWemoService){
   this.wemoStereoService = MyWemoService;
 };
 
-WemoStereoController.prototype.BuildRouting = function(app,socket){
-  var self = this;
+WemoController.prototype.BuildRouting = function(app,socket){
 
 app.put('/stereo/', function(req, res) {
+  var self = this;
   new AuthService().PromptForCredentials(req,res,function(){
       self.wemoStereoService.changeState(function(result){
         res.send(result);
@@ -19,6 +19,7 @@ app.put('/stereo/', function(req, res) {
 
 /*Websockets lights listing */
 socket.on('ready', function() {
+  var self = this;
     self.wemoStereoService.getState(function(result){
         socket.emit('wemostereotalk',
         {
@@ -29,4 +30,4 @@ socket.on('ready', function() {
 
 }
 
-module.exports = WemoStereoController;
+module.exports = WemoController;
