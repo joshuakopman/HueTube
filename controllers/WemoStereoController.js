@@ -6,7 +6,7 @@ function WemoStereoController(MyWemoService){
 };
 
 WemoStereoController.prototype.BuildRouting = function(app,socket){
-  var self = this;
+var self = this;
 
 app.put('/stereo/', function(req, res) {
   new AuthService().PromptForCredentials(req,res,function(){
