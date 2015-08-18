@@ -1,0 +1,223 @@
+@media all and (max-width: 1024px) {
+body{
+	  font-size: 14px;
+}
+
+.firstHeader{
+	margin-left: 130px;
+	font-weight:bold;
+	font-size: 18px;
+}
+.secondHeader{
+	font-weight:bold;
+	margin-left: 130px;
+	font-size: 18px;
+}
+
+.siteContainer{
+  float: left;
+  margin: 0px auto;
+  width: 350px;
+  text-align: center;
+}
+
+#lightControllerDiv{
+	text-align:center;
+	float:left;
+	margin-bottom:10px;
+
+}
+.lightInfoDiv{
+	margin: 10px;
+	background-color: grey;
+	padding: 5px;
+	width: 470px;
+	min-height: 320px;
+}
+.lightInfoDivCollapsed{
+	margin: 10px;
+	margin-bottom: 9px;
+	background-color:grey;
+	padding-top: 17px;
+	padding: 5px;
+	width: 470px;
+	padding-bottom: 12px;
+	min-height:200px;
+}
+.itemName{
+	font-weight:bold;
+	font-size: 27px;
+	padding: 4px;
+	margin:0px auto;
+	margin-top: 0px;
+	color: white;
+	text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+	text-align: center;
+}
+
+.lightState{
+	min-height: 36px;
+}
+
+.lightSwitch{
+	float:left;
+	margin-left: 90px;
+	margin-top: 50px;
+}
+.groupSwitch{
+	float:left;
+	margin-left: 80px;
+	margin-top: 49px;
+}
+.colorPanel{
+   border: 3px solid darkgrey;
+   float:left;
+   margin-top:15px;
+   margin-left: 53px;
+   padding-right:0px;
+   overflow:auto;
+}
+
+.swatch{
+	width: 50px;  
+	height: 50px;
+    float:left;
+    cursor: pointer;
+    display:block;
+}
+
+.colorIcon{
+	cursor:pointer;
+	margin-left: 25px;
+	float: left;
+	margin-top: 35px;
+	padding:3px 5px !important;
+}
+.colorIconImg{
+	height: 100px;
+	width: 100px;
+}
+
+.btn{
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	border-radius: 52px !important;
+}
+
+.bulb {
+  height: 100px;
+  width: 150px;
+  margin-top: 26px;
+}
+
+#brightSlider{
+	display: none;
+	float:left;
+	overflow:auto;
+	margin-top:36px;
+	width: 300px;
+}
+
+.wemoContainer{
+  margin: 10px;
+  background-color: grey;
+  padding: 5px;
+  padding-top: 10px;
+  width: 470px;
+  padding-bottom: 120px;
+}
+
+
+#bottomContainer{
+	margin-top: 60px;
+}
+.dimnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:40px;
+	margin-left:70px;
+	margin-right:5px
+}
+
+.brightnessIcon{
+	width:10px;
+	height:10px;
+	display:inline;
+	float:left;
+	margin-top:39px;
+	margin-left:7px;
+}
+
+.toggle-alternate{
+	width: 11.48em  !important;
+}
+.toggle-bg{
+	height: 5em !important;
+    border-radius: 4em !important;
+}
+.switch{
+	height: 4.9em;
+	width: 4.9em;
+}
+
+.toggle-alternate input ~ :checked ~ .switch {
+  left: 6.4em !important;
+}
+.toggle-alternate label {
+  font-size: 2.4em !important;
+}
+
+.switch-group{
+	height: 4.9em !important;
+  	
+	width: 4.9em !important;
+}
+
+#groupToggle{
+	  width: 15.48em !important;
+}
+
+.toggle-bg input:checked ~ .switch-group {
+  left: 10.4em !important;
+}
+.toggle-alternate input ~ :checked ~ .switch-group{
+	left: 0em !important;
+}
+ .switch,.switch-group {
+   border-radius: 3em !important;
+ }
+
+.toggle-alternate input {
+  width: 19.24em !important;
+ }
+
+label.off.group{
+	right:0.35em !important;
+}
+ .wemoButton{
+ 	margin-left:150px;
+}
+.toggle-bg label.on,.toggle-bg label.Lights,.toggle-bg label.off{
+	top: 30px !important;
+}
+
+}

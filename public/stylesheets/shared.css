@@ -1,0 +1,58 @@
+*{
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img{
+	vertical-align: middle;
+}
+
+.red{
+	background-color: red;
+}
+.orange{
+	background-color: #FFA500;
+}
+.yellow{
+	background-color: #FFFF00;
+}
+.green{
+	background-color: #00FF00;
+}
+.blue{
+	background-color: #0000FF;
+}
+.purple{
+	background-color: #FF00FF;
+}
+.white{
+	background-color: white;
+}
+
+.swatch:hover{
+	border:2px solid black;
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.btn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.lightStateCollapsed>div{
+	display: none;
+}
+
+.lightState input#brightSlider{
+	display: inline;
+}
