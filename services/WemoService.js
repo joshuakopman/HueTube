@@ -34,8 +34,7 @@ WemoService.prototype.turnOnWemo = function(callback){
 	this.wemoSwitch.setBinaryState(1, function(err, result) { // switch on 
 			return callback(result);
 		});
-	}
+}
 
-};
 
 module.exports = WemoService;
