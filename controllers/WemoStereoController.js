@@ -3,14 +3,14 @@ var Config = require("../Config");
 
 function WemoStereoController(MyWemoService,UsersCollection){
   this.wemoStereoService = MyWemoService;
-  this.usersCollection = UsersCollection;
+  usersCollection = UsersCollection;
 };
 
 WemoStereoController.prototype.BuildRouting = function(app,socket){
 var self = this;
 
 app.put('/stereo/', function(req, res) {
-  new AuthService(self.usersCollection).PromptForCredentials(req,res,function(){
+  new AuthService(usersCollection).PromptForCredentials(req,res,function(){
       self.wemoStereoService.changeState(function(result){
         res.send(result);
       });
