@@ -25,7 +25,7 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 });
 
-var dbUrl = 'mongodb://' + Config.mongodbhost + ':' + Config.mongodbport + '/' + Config.authdb;
+var dbUrl = 'mongodb://' + Config.mongodbhost + '/' + Config.authdb;
 mongo.connect(dbUrl, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
