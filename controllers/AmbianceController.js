@@ -1,17 +1,17 @@
 var AuthService = require("../services/AuthService");
 
-function AmbianceController(LightService,WemoService,SpotifyService, userCollection){
+function AmbianceController(LightService,WemoService,SpotifyService, UsersCollection){
   lightService = LightService;
   wemoService = WemoService;
   spotifyService = SpotifyService;
-  db = userCollection;
+  usersCollection = UsersCollection;
 };
 
 AmbianceController.prototype.BuildRouting = function(app,socket){
 var self = this;
 
 app.put('/ambiance/:id', function(req, res) {
-  new AuthService(self.db).PromptForCredentials(req,res,function(){
+  new AuthService(usersCollection).PromptForCredentials(req,res,function(){
       wemoService.getState(function(state){
           if(state == "off"){
               wemoService.turnOnWemo(function(result){

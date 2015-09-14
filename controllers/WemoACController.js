@@ -1,8 +1,9 @@
 var AuthService = require("../services/AuthService");
 var Config = require("../Config");
 
-function WemoACController(MyWemoService){
+function WemoACController(MyWemoService,UsersCollection){
   this.wemoACService = MyWemoService;
+  this.usersCollection = UsersCollection;
 };
 
 WemoACController.prototype.BuildRouting = function(app,socket){

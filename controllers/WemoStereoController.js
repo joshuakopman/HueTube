@@ -1,15 +1,16 @@
 var AuthService = require("../services/AuthService");
 var Config = require("../Config");
 
-function WemoStereoController(MyWemoService){
+function WemoStereoController(MyWemoService,UsersCollection){
   this.wemoStereoService = MyWemoService;
+  this.usersCollection = UsersCollection;
 };
 
 WemoStereoController.prototype.BuildRouting = function(app,socket){
 var self = this;
 
 app.put('/stereo/', function(req, res) {
-  new AuthService().PromptForCredentials(req,res,function(){
+  new AuthService(self.usersCollection).PromptForCredentials(req,res,function(){
       self.wemoStereoService.changeState(function(result){
         res.send(result);
       });
