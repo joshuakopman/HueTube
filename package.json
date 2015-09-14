@@ -9,7 +9,8 @@
     "gulp-concat":"*",
     "gulp-uglify":"*",
     "socket.io": "^1.3.2",
-    "wemo":"*"
+    "wemo":"*",
+    "mongodb": "*"
   },
   "devDependencies": {
     "gulp": "^3.9.0"

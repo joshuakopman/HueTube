@@ -1,7 +1,8 @@
 var AuthService = require("../services/AuthService");
 
-function LightController(LightService){
+function LightController(LightService,userCollection){
 	lightService = LightService;
+  db = userCollection;
 };
 
 LightController.prototype.BuildRouting = function(app,socket){
@@ -12,7 +13,7 @@ LightController.prototype.BuildRouting = function(app,socket){
   });
 
   app.put('/lights/:id', function(req, res) {
-    new AuthService().PromptForCredentials(req,res,function(){
+    new AuthService(db).PromptForCredentials(req,res,function(){
       lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
         res.send(result);
       });
@@ -20,7 +21,7 @@ LightController.prototype.BuildRouting = function(app,socket){
   });
 
   app.put('/groups/:id', function(req, res) {
-     new AuthService().PromptForCredentials(req,res,function(){
+     new AuthService(db).PromptForCredentials(req,res,function(){
       lightService.setGroupState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
         res.send(result);
        });

@@ -1,23 +1,25 @@
 var Config = require("../Config");
 
-function AuthService(){
-
+function AuthService(userCollection){
+    users = userCollection;
 };
 
 AuthService.prototype.PromptForCredentials = function(req,res,next){
     var auth;
+    users.find({_id:"adminuser"}).toArray(function(err,items){
+        if (req.headers.authorization) {
+          auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
+        }
 
-    if (req.headers.authorization) {
-      auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
-    }
+        if (!auth || auth[0] !== items[0].name || auth[1] !== items[0].password) {
+            res.statusCode = 401;
+            res.setHeader('WWW-Authenticate', 'Basic realm="Enter Valid Credentials To Access HueTube Dashboard"');
+            res.end('You are not authorized to view the HueTube Light Dashboard.');
+        } else {
+            next();
+        }
+    });
 
-    if (!auth || auth[0] !== 'testuser' || auth[1] !== 'testpassword') {
-        res.statusCode = 401;
-        res.setHeader('WWW-Authenticate', 'Basic realm="Enter Valid Credentials To Access HueTube Dashboard"');
-        res.end('You are not authorized to view the HueTube Light Dashboard.');
-    } else {
-        next();
-    }
 }
 
 module.exports = AuthService;
