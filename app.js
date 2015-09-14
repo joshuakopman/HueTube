@@ -3,8 +3,7 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var LightController = require('./controllers/LightController');
-var WemoStereoController = require('./controllers/WemoStereoController');
-var WemoACController = require('./controllers/WemoACController');
+var WemoController = require('./controllers/WemoController');
 var AmbianceController = require('./controllers/AmbianceController');
 var LightService = require('./services/LightService');
 var AuthService = require('./services/AuthService');
@@ -37,9 +36,9 @@ mongo.connect(dbUrl, function (err, db) {
 		var io = require('socket.io').listen(server);
 		io.sockets.on('connection', function (newSocket){
 			new LightController(new LightService(),usersTable).BuildRouting(app,newSocket);
-			new WemoStereoController(new WemoService(Config.wemo.Stereo.port),usersTable).BuildRouting(app,newSocket);
+			new WemoController(new WemoService(Config.wemo.Stereo.port),usersTable).BuildRouting(app,newSocket,'stereo','wemostereotalk');
+			new WemoController(new WemoService(Config.wemo.AC.port),usersTable).BuildRouting(app,newSocket,'ac','wemoactalk');
 			new AmbianceController(new LightService(),new WemoService(Config.wemo.Stereo.port),new SpotifyService(),usersTable).BuildRouting(app,newSocket);
-			new WemoACController(new WemoService(Config.wemo.AC.port),usersTable).BuildRouting(app,newSocket);
 		});
 	});
   }
