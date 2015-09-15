@@ -21,5 +21,9 @@ AuthService.prototype.PromptForCredentials = function(req,res,next){
     });
 
 }
+function encrypt(plaintextpwd){
+    var salt = ''
+    return plaintextpwd * salt;
+}
 
 module.exports = AuthService;

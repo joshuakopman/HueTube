@@ -6,4 +6,8 @@ sudo docker rmi $(sudo docker images -q)
 
 sudo docker run -d --name mongodb mongo
 
-sudo docker run  --link mongodb:mongodb -p 80:7076 -p 7076:7076 -i aesopwaits/huetube
+sudo docker run -v /home/ec2-user/:/mnt --link mongodb:mongodb -p 80:7076 -p 7076:7076 --name huetubecontainer aesopwaits/huetube
+
+sudo docker exec -it huetubecontainer bash
+
+cp ../../../mnt/salt.txt . 

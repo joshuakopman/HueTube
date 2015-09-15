@@ -12,6 +12,7 @@ var SpotifyService = require('./services/SpotifyService');
 var Config = require("./Config")
 var cors = require('cors')
 var mongo = require("mongodb").MongoClient;
+var EncryptionHelper = require('./helpers/EncryptionHelper');
 
 app.use(cors());
 app.use(bodyParser());
@@ -30,7 +31,7 @@ mongo.connect(dbUrl, function (err, db) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } else {
 
-	var admin = {_id:"adminuser" , name:"admin", password:"password"};
+	var admin = {_id:"adminuser" , name:"admin", password: new EncryptionHelper().GetSeededAdminPassword()};
 	var usersTable = db.collection('Users');
 	usersTable.save(admin,function(err,result){
 		var io = require('socket.io').listen(server);
