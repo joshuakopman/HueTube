@@ -42,8 +42,8 @@ mongo.connect(dbUrl, function (err, db) {
 				new AmbianceController(new LightService(),new WemoService(Config.wemo.Stereo.port),new SpotifyService(),usersTable).BuildRouting(app,newSocket);
 			});
 		});
-	})}
-  }
+	});
+ }
 });
 
 
