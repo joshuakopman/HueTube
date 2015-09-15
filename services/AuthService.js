@@ -10,7 +10,7 @@ AuthService.prototype.PromptForCredentials = function(req,res,next){
         if (req.headers.authorization) {
           auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
         }
-
+        console.log('The password entered is: '+auth[1]);
         if (!auth || auth[0] !== items[0].name || auth[1] !== items[0].password) {
             res.statusCode = 401;
             res.setHeader('WWW-Authenticate', 'Basic realm="Enter Valid Credentials To Access HueTube Dashboard"');
