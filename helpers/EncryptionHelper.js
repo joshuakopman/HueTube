@@ -5,13 +5,13 @@ function EncryptionHelper(){
 
 }
 
-EncryptionHelper.prototype.GetSeededAdminPassword = function() {
+EncryptionHelper.prototype.GetSeededAdminPassword = function(callback) {
 fs.readFile('salt.txt', 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
   console.log("The password read in from the file is '"+data+"'");
-  return data;
+  callback(data);
 });
 }
 

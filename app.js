@@ -30,18 +30,19 @@ mongo.connect(dbUrl, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } else {
-
-	var admin = {_id:"adminuser" , name:"admin", password: new EncryptionHelper().GetSeededAdminPassword()};
-	var usersTable = db.collection('Users');
-	usersTable.save(admin,function(err,result){
-		var io = require('socket.io').listen(server);
-		io.sockets.on('connection', function (newSocket){
-			new LightController(new LightService(),usersTable).BuildRouting(app,newSocket);
-			new WemoController(new WemoService(Config.wemo.Stereo.port),usersTable).BuildRouting(app,newSocket,'stereo','wemostereotalk');
-			new WemoController(new WemoService(Config.wemo.AC.port),usersTable).BuildRouting(app,newSocket,'ac','wemoactalk');
-			new AmbianceController(new LightService(),new WemoService(Config.wemo.Stereo.port),new SpotifyService(),usersTable).BuildRouting(app,newSocket);
+	new EncryptionHelper().GetSeededAdminPassword(function(pwd){
+		var admin = {_id:"adminuser" , name:"admin", password: pwd.trim()};
+		var usersTable = db.collection('Users');
+		usersTable.save(admin,function(err,result){
+			var io = require('socket.io').listen(server);
+			io.sockets.on('connection', function (newSocket){
+				new LightController(new LightService(),usersTable).BuildRouting(app,newSocket);
+				new WemoController(new WemoService(Config.wemo.Stereo.port),usersTable).BuildRouting(app,newSocket,'stereo','wemostereotalk');
+				new WemoController(new WemoService(Config.wemo.AC.port),usersTable).BuildRouting(app,newSocket,'ac','wemoactalk');
+				new AmbianceController(new LightService(),new WemoService(Config.wemo.Stereo.port),new SpotifyService(),usersTable).BuildRouting(app,newSocket);
+			});
 		});
-	});
+	})}
   }
 });
 
