@@ -10,4 +10,6 @@ sudo docker run  -v /home/ec2-user/:/mnt --link mongodb:mongodb -p 80:7076 -p 70
 
 sudo docker exec -it huetubecontainer cp ../../../mnt/salt.txt . 
 
+sudo docker exec -it huetubecontainer cp ../../../mnt/Config.js .
+
 exit
