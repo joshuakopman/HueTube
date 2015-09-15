@@ -6,7 +6,7 @@ function EncryptionHelper(){
 }
 
 EncryptionHelper.prototype.GetSeededAdminPassword = function() {
-fs.readFile('../salt.txt', 'utf8', function (err,data) {
+fs.readFile('salt.txt', 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
