@@ -23,7 +23,8 @@ Option 2: Run directly as a MEAN stack app:<br/>
 2) Replace the salt.txt file contents with your desired Admin password.<br/>
 3) cd src<br/>
 4) npm install<br/>
-5) node ./app.js<br/>
+5) gulp
+6) node ./app.js<br/>
 
 Node server will be running on port 7076. App is accessible at http://localhost:7076<br/> 
 Bridge port, IP, and Hue Developer ID are all configurable via src/Config.js within node. <br/>

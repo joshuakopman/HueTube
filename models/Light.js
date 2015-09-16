@@ -5,7 +5,7 @@ function Light(id,Name,State,Hue,Saturation,Brightness,Color,ColorName){
 	this.Hue = Hue;
 	this.Saturation = Saturation;
 	this.Brightness = Brightness;
-	this.Color = Color;
+	//this.Color = Color;
 	this.ColorName = ColorName
 };
 

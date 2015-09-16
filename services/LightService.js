@@ -40,9 +40,10 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 	    clientLight.lightid = x;
 	    this.BuildStateForLight(bridgeLight.state, clientLight);
 		clientLight.Name = bridgeLight["name"];
-		var rgb = colorHelper.toRGB(clientLight.x,clientLight.y,clientLight.Brightness);
+		/*var rgb = colorHelper.toRGB(clientLight.x,clientLight.y,clientLight.Brightness);
+		console.log(rgb);
 		var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
-		clientLight.Color = "#"+hex;
+		clientLight.Color = "#"+hex;*/
 		clientLight.ColorName = colorHelper.getColorName(clientLight.x,clientLight.y,clientLight.Brightness,clientLight.State);
 		clientLights.push(clientLight);
 	}
@@ -59,7 +60,6 @@ LightService.prototype.getLights = function(callback){
 	        'Content-Type': 'application/json'
 	    }
     };
-
     this.options = requestOptions;
     var self = this;
     this.getJSON(function(statusCode,obj){
