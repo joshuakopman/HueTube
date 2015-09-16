@@ -5,24 +5,25 @@ Live updating dashboard application to interact with Phillips Hue smart lighting
 
 Instructions:
 
-Run on AWS EC2 using init script and latest DockerHub image:
 
-1) SSH into EC2 instance and create a salt.txt with your desired admin password.<br/>
-2) SCP the init.sh script onto the instance.<br/>
-3) Run the script via 'bash init.sh'. The script kills all running containers and images, pulls fresh images and starts linked mongodb and HueTube application containers.<br/>
+Option 1: Run using Docker:<br/>
 
-Build local image, start mongodb container, and run via Docker:<br/>
+1)Utilize one of the sample bash scripts /init-scripts to pull and run the latest DockerHub image or build a local image via the Dockerfile.<br/>
 
-1) docker build -t huetube .<br/>
-2) docker run -d --name mongodb mongo<br/>
-3) docker run  -v /localpath/to/saltfile:/mnt --link mongodb:mongodb -p 80:7076 -p 7076:7076 -d --name huetubecontainer huetube<br/>
-4) docker exec -it huetubecontainer cp ../../../mnt/salt.txt . <br/>
+2)Update the Config.js with your local IP and Phillips Hue developer name.<br/>
 
-Run directly as MEAN stack app:<br/>
-Start Mongo Db Server /path/to/mongod --dbpath /data<br/>
-1) cd src<br/>
-2) npm install<br/>
-3) node ./app.js<br/>
+3)Replace the salt.txt file contents with your desired Admin password.<br/>
+
+<br/>
+
+Option 2: Run directly as a MEAN stack app:<br/>
+
+*Start Mongo Db Server /path/to/mongod --dbpath /data<br/>
+1) Update the Config.js with your local IP and Phillips Hue developer name.<br/>
+2) Replace the salt.txt file contents with your desired Admin password.<br/>
+3) cd src<br/>
+4) npm install<br/>
+5) node ./app.js<br/>
 
 Node server will be running on port 7076. App is accessible at http://localhost:7076<br/> 
 Bridge port, IP, and Hue Developer ID are all configurable via src/Config.js within node. <br/>
