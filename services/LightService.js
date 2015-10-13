@@ -29,23 +29,19 @@ LightService.prototype.BuildLightsResponse = function(BridgeLights){
 
 	if(BridgeLights == null)
 		return clientLights;
-
-	var jsonLength = Object.keys(BridgeLights).length;
-	var colorHelper = new ColorHelper();
-
-	for(var x = 8;x < jsonLength + 8;x++)
+	for (var bridgeLightKey in BridgeLights) 
 	{
-		var bridgeLight = BridgeLights[x.toString()];
+	  if (BridgeLights.hasOwnProperty(bridgeLightKey)) 
+	  {
+	  	var colorHelper = new ColorHelper();
+	  	var bridgeLight = BridgeLights[bridgeLightKey];
 		var clientLight = new Light();
-	    clientLight.lightid = x;
+	    clientLight.lightid = bridgeLightKey;
 	    this.BuildStateForLight(bridgeLight.state, clientLight);
 		clientLight.Name = bridgeLight["name"];
-		/*var rgb = colorHelper.toRGB(clientLight.x,clientLight.y,clientLight.Brightness);
-		console.log(rgb);
-		var hex = colorHelper.rgbToHex(rgb.r,rgb.g,rgb.b);
-		clientLight.Color = "#"+hex;*/
 		clientLight.ColorName = colorHelper.getColorName(clientLight.x,clientLight.y,clientLight.Brightness,clientLight.State);
 		clientLights.push(clientLight);
+	  }
 	}
 	return clientLights;
 }
@@ -61,6 +57,7 @@ LightService.prototype.getLights = function(callback){
 	    }
     };
     this.options = requestOptions;
+    console.log(this.options);
     var self = this;
     this.getJSON(function(statusCode,obj){
 		var lightsResp = self.BuildLightsResponse(obj);
