@@ -1,11 +1,19 @@
-var Wemo = require('wemo')
 var Config = require("../Config");
 
 function WemoService(port){
-	this.wemoSwitch = new Wemo(Config.host, port);
+	this.wemoSwitch = null;
+	try {
+		var Wemo = require('wemo');
+		this.wemoSwitch = new Wemo(Config.host, port);
+	} catch (e) {
+		console.warn('Wemo disabled: optional dependency failed to load.');
+	}
 };
 
 WemoService.prototype.changeState = function(callback){
+	if (!this.wemoSwitch) {
+		return callback("wemo-unavailable");
+	}
 	var self = this;
 	this.wemoSwitch.getBinaryState(function(err, result) {
 
@@ -20,6 +28,9 @@ WemoService.prototype.changeState = function(callback){
 }
 
 WemoService.prototype.getState = function(callback){
+	if (!this.wemoSwitch) {
+		return callback("unavailable");
+	}
 	this.wemoSwitch.getBinaryState(function(err, result) {
 			var state = '';
 			if(result == 0){
@@ -32,6 +43,9 @@ WemoService.prototype.getState = function(callback){
 	}
 
 WemoService.prototype.turnOnWemo = function(callback){
+	if (!this.wemoSwitch) {
+		return callback("wemo-unavailable");
+	}
 	this.wemoSwitch.setBinaryState(1, function(err, result) { // switch on 
 			return callback(result);
 		});
