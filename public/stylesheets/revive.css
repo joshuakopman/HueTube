@@ -150,10 +150,10 @@ body {
   }
 
   .lightInfoContainer {
-    display: flex !important;
-    flex-wrap: wrap;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 262px));
     justify-content: center;
-    align-items: flex-start;
+    align-items: start;
     gap: 12px;
     padding-bottom: 10px;
   }
@@ -166,29 +166,22 @@ body {
   }
 
   .groupSwitch {
-    order: 100;
+    grid-column: 1 / -1;
+    justify-self: center;
     float: none !important;
     display: block !important;
-    flex: 0 0 100%;
     width: 15.48em !important;
     max-width: 100%;
-    height: 5em !important;
     margin: 18px auto 8px !important;
     vertical-align: middle;
-    border: 0.12em solid #e6e6e6 !important;
-    border-radius: 4em !important;
-    background: #fff !important;
-    position: relative;
   }
 
   .colorIcon {
-    order: 101;
+    grid-column: 1 / -1;
+    justify-self: center;
     float: none !important;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 100%;
-    width: 100% !important;
+    display: block !important;
+    width: 56px !important;
     height: auto !important;
     margin: 0 auto 22px !important;
     vertical-align: middle;
@@ -202,7 +195,7 @@ body {
     display: block;
     width: 56px;
     height: 56px;
-    margin: 0;
+    margin: 0 auto;
     border-radius: 50%;
     border: 1px solid rgba(214, 226, 239, 0.55);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
