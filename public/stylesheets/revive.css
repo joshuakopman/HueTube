@@ -176,17 +176,27 @@ body {
     vertical-align: middle;
   }
 
-  /* Keep ALL LIGHTS knob travel distance matched to the wider group toggle. */
+  /* Keep ALL LIGHTS geometry identical to legacy behavior. */
   .groupSwitch input {
     width: 19.24em !important;
   }
 
-  .groupSwitch input:first-of-type:checked ~ .switch-group {
-    left: -0.1em !important;
+  .groupSwitch input:checked ~ .switch-group {
+    left: 10.4em !important;
   }
 
-  .groupSwitch input:last-of-type:checked ~ .switch-group {
-    left: calc(100% - 5em) !important;
+  .groupSwitch input ~ :checked ~ .switch-group {
+    left: 0 !important;
+  }
+
+  .groupSwitch .switch-group {
+    width: 4.9em !important;
+    height: 4.9em !important;
+    border-radius: 3em !important;
+  }
+
+  .groupSwitch label.off.group {
+    right: 0.35em !important;
   }
 
   .colorIcon {
