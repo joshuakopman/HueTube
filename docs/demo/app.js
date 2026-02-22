@@ -219,13 +219,8 @@
   }
 
   if (toast && dismissToast) {
-    if (window.localStorage.getItem('huetube-demo-toast-dismissed') === '1') {
-      toast.classList.add('hidden');
-    }
-
     dismissToast.addEventListener('click', function () {
       toast.classList.add('hidden');
-      window.localStorage.setItem('huetube-demo-toast-dismissed', '1');
     });
   }
 
