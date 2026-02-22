@@ -124,3 +124,39 @@ body {
     border-radius: 16px;
   }
 }
+
+@media all and (min-width: 1024px) {
+  body {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 24px;
+  }
+
+  .siteContainer {
+    float: none !important;
+    width: 100% !important;
+    max-width: 1120px !important;
+    margin: 24px auto !important;
+  }
+
+  #lightControllerDiv {
+    float: none !important;
+    width: auto !important;
+    max-width: 980px !important;
+    margin: 0 auto 14px !important;
+    text-align: center !important;
+  }
+
+  .groupSwitch {
+    float: none !important;
+    display: inline-block !important;
+    margin: 20px 14px 22px !important;
+    vertical-align: middle;
+  }
+
+  .colorIcon {
+    float: none !important;
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+}
