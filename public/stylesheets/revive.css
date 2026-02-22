@@ -176,6 +176,19 @@ body {
     vertical-align: middle;
   }
 
+  /* Keep ALL LIGHTS knob travel distance matched to the wider group toggle. */
+  .groupSwitch input {
+    width: 19.24em !important;
+  }
+
+  .groupSwitch input:checked ~ .switch-group {
+    left: 10.4em !important;
+  }
+
+  .groupSwitch input ~ :checked ~ .switch-group {
+    left: 0 !important;
+  }
+
   .colorIcon {
     grid-column: 1 / -1;
     justify-self: center;
