@@ -176,17 +176,9 @@ body {
     vertical-align: middle;
   }
 
-  /* Keep ALL LIGHTS geometry identical to legacy behavior. */
+  /* Demo: keep ALL LIGHTS geometry stable by driving knob from state class. */
   .groupSwitch input {
     width: 19.24em !important;
-  }
-
-  .groupSwitch input:checked ~ .switch-group {
-    left: calc(100% - 2em) !important;
-  }
-
-  .groupSwitch input ~ :checked ~ .switch-group {
-    left: 0 !important;
   }
 
   .groupSwitch .switch-group {
@@ -194,6 +186,15 @@ body {
     height: 1.9em !important;
     border-radius: 2em !important;
     top: -0.05em !important;
+  }
+
+  .groupSwitch.on .switch-group {
+    left: calc(100% - 2em) !important;
+  }
+
+  .groupSwitch.off .switch-group,
+  .groupSwitch.Lights .switch-group {
+    left: -0.1em !important;
   }
 
   .groupSwitch label.off.group {
