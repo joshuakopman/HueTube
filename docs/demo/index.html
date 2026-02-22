@@ -4,31 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HueTube Demo</title>
+  <link rel="stylesheet" href="styles/styles.min.css">
+  <link rel="stylesheet" href="styles/revive.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <aside id="demo-toast" class="toast" role="status" aria-live="polite">
     <div class="toast-body">
       <h2>Legacy Demo Mode</h2>
-      <p>This hosted version uses mocked light state because GitHub Pages cannot reach your local Hue bridge.</p>
-      <p class="toast-tip">Try toggles, per-light colors, and ALL LIGHTS controls.</p>
+      <p>This hosted version uses mocked data because GitHub Pages cannot reach a local Hue bridge.</p>
+      <p class="toast-tip">Try toggles, color swatches, and the ALL LIGHTS controls.</p>
     </div>
     <button id="dismiss-toast" class="toast-close" type="button" aria-label="Dismiss demo notice">x</button>
   </aside>
 
-  <main class="page">
-    <header class="header">
-      <h1>HueTube Demo</h1>
-      <p>Static GitHub Pages mock. No live bridge required.</p>
-    </header>
-
-    <section class="controls">
-      <button id="all-toggle" class="toggle-btn" type="button" aria-pressed="true">ALL ON</button>
-      <div class="swatches" id="all-swatches" aria-label="All lights color picker"></div>
-    </section>
-
-    <section id="lights" class="grid" aria-label="Demo lights"></section>
-  </main>
+  <div class="siteContainer">
+    <div class="firstHeader">Phillips Hue</div>
+    <div id="lightControllerDiv">
+      <div class="lightInfoContainer" id="lightInfoContainer"></div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

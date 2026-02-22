@@ -1,28 +1,3 @@
-:root {
-  --bg-a: #06101d;
-  --bg-b: #0c1a2c;
-  --panel: rgba(7, 17, 31, 0.86);
-  --panel-border: rgba(112, 154, 208, 0.26);
-  --text: #e2eaf5;
-  --muted: #8ca0ba;
-  --glow: rgba(241, 173, 69, 0.24);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 100% -10%, rgba(90, 131, 201, 0.22), transparent 38%),
-    radial-gradient(circle at 0% 100%, rgba(241, 173, 69, 0.14), transparent 45%),
-    linear-gradient(160deg, var(--bg-a), var(--bg-b));
-}
-
 .toast {
   width: min(980px, calc(100% - 28px));
   margin: 14px auto 0;
@@ -40,12 +15,11 @@ body {
 .toast h2 {
   margin: 0 0 4px;
   color: #2a7e9a;
-  font-size: 1.9rem;
 }
 
 .toast p {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: 1.05em;
 }
 
 .toast-tip {
@@ -56,140 +30,37 @@ body {
   border: 0;
   background: transparent;
   color: #2a7e9a;
-  font-size: 1.9rem;
+  font-size: 40px;
   line-height: 1;
   cursor: pointer;
-  padding: 0 2px;
+  padding: 0;
 }
 
 .toast.hidden {
   display: none;
 }
 
-.page {
-  width: min(1080px, calc(100% - 28px));
-  margin: 20px auto;
-  border: 1px solid var(--panel-border);
-  border-radius: 22px;
-  background: linear-gradient(145deg, rgba(8, 20, 35, 0.95), rgba(5, 13, 24, 0.95));
-  padding: 22px 18px 26px;
+/* Demo-specific polish without changing legacy control geometry. */
+body {
+  padding-top: 0 !important;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 20px;
+.siteContainer {
+  margin-top: 14px !important;
 }
 
-.header h1 {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.lightInfoDivCollapsed {
+  min-height: 220px;
 }
 
-.header p {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.toggle-btn {
-  border: 1px solid #2b3a51;
-  background: #0a111d;
-  color: var(--text);
-  border-radius: 999px;
-  min-width: 170px;
-  padding: 10px 16px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.toggle-btn[aria-pressed="false"] {
-  background: #d7d7d9;
-  color: #25344a;
-}
-
-.swatches {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.swatch {
-  border: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 12px;
-}
-
-.card {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  background: rgba(10, 19, 33, 0.74);
-  padding: 10px;
-  min-height: 148px;
-}
-
-.card h2 {
-  margin: 0;
-  font-size: 2rem;
-  line-height: 1.05;
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.light-toggle {
-  font-size: 1.15rem;
-  padding: 8px 14px;
-}
-
-.bulb {
-  width: 74px;
-  height: 74px;
-  filter: drop-shadow(0 0 14px var(--glow));
-}
-
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .toast {
-    padding: 12px;
-  }
-
-  .toast h2 {
-    font-size: 1.4rem;
+    width: calc(100% - 16px);
+    margin: 8px;
+    padding: 10px;
   }
 
   .toast p {
-    font-size: 0.95rem;
-  }
-
-  .card h2 {
-    font-size: 1.45rem;
-  }
-
-  .bulb {
-    width: 64px;
-    height: 64px;
+    font-size: 0.95em;
   }
 }
