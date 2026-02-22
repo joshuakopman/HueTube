@@ -181,21 +181,11 @@ body {
     width: 19.24em !important;
   }
 
-  .groupSwitch input:checked ~ .switch-group {
-    left: calc(100% - 5em) !important;
-  }
-
-  .groupSwitch input ~ :checked ~ .switch-group {
+  .groupSwitch input:first-of-type:checked ~ .switch-group {
     left: -0.1em !important;
   }
 
-  /* Source of truth: align knob to actual group state class, not stale radio selection. */
-  .groupSwitch.on .switch-group {
-    left: -0.1em !important;
-  }
-
-  .groupSwitch.off .switch-group,
-  .groupSwitch.Lights .switch-group {
+  .groupSwitch input:last-of-type:checked ~ .switch-group {
     left: calc(100% - 5em) !important;
   }
 
