@@ -104,6 +104,11 @@ body {
   color: var(--text-main) !important;
 }
 
+.toggle-bg label.off {
+  color: #6f7d93 !important;
+  font-weight: 700;
+}
+
 @keyframes card-enter {
   from {
     opacity: 0;
