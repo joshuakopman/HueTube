@@ -28,26 +28,6 @@
 		    	</div>
 		</div>  
 	</div>
-	<div class="siteContainer" id="bottomContainer">
-	 	<div class="secondHeader">WeMo</div>
-		<div class="wemoContainer">
-			<div class="itemName">
-				Stereo
-			</div>
-		   <wemo ng-init="getWemoStereoInfo()" model="wemoResponse" toggle="switchState"></wemo>
-		</div>
-		<div class="wemoContainer ac">
-			<div class="itemName">
-			  	A/C
-			 </div>
-			 <wemoac ng-init="getWemoACInfo()" model="wemoACResponse" toggle="switchACState"></wemoac>
-		</div>
-		<div class="wemoContainer ambiance" ng-click="toggle(0,'off',50000,120,255,'',false,true,'spotify:track:6FsQrRpBLgsrFeAeiQqytm');" >
-			<div class="itemName" >
-			  	Ambiance
-			 </div>
-		</div>
-	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.min.js"></script>
   	<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
