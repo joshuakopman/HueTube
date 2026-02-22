@@ -1,0 +1,116 @@
+:root {
+  --bg-top: #0a121c;
+  --bg-bottom: #151f2d;
+  --panel: rgba(14, 24, 36, 0.76);
+  --panel-border: rgba(120, 173, 214, 0.22);
+  --text-main: #e7f0fb;
+  --text-muted: #9eb2c9;
+  --accent: #58d0a0;
+  --accent-glow: rgba(88, 208, 160, 0.28);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% -10%, rgba(88, 208, 160, 0.2), transparent 42%),
+    radial-gradient(circle at 0% 100%, rgba(126, 154, 255, 0.2), transparent 44%),
+    linear-gradient(165deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text-main);
+  font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+}
+
+.siteContainer {
+  max-width: 980px;
+  margin: 20px auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.firstHeader {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-shadow: none;
+}
+
+.lightInfoContainer {
+  padding-top: 12px;
+}
+
+.lightInfoDiv,
+.lightInfoDivCollapsed {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  background: rgba(12, 19, 30, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  animation: card-enter 380ms ease both;
+}
+
+.lightInfoDiv:nth-of-type(2n),
+.lightInfoDivCollapsed:nth-of-type(2n) {
+  animation-delay: 90ms;
+}
+
+.lightInfoDiv:nth-of-type(3n),
+.lightInfoDivCollapsed:nth-of-type(3n) {
+  animation-delay: 140ms;
+}
+
+.itemName {
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+}
+
+.lightState,
+.lightStateCollapsed {
+  border-left: 2px solid rgba(88, 208, 160, 0.4);
+}
+
+.bulb {
+  filter: drop-shadow(0 0 18px var(--accent-glow));
+}
+
+.groupSwitch {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(12, 20, 30, 0.55);
+}
+
+.colorIcon {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(14, 28, 42, 0.9);
+}
+
+.colorIcon:hover {
+  border-color: rgba(88, 208, 160, 0.52);
+  box-shadow: 0 0 0 3px rgba(88, 208, 160, 0.2);
+}
+
+.toggle-bg label.on,
+.toggle-bg label.Lights,
+.toggle-bg label.off {
+  color: var(--text-main) !important;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .siteContainer {
+    margin: 10px;
+    border-radius: 16px;
+  }
+}
