@@ -49,10 +49,6 @@ body {
   margin-top: 14px !important;
 }
 
-.lightInfoDivCollapsed {
-  min-height: 220px;
-}
-
 @media (max-width: 1024px) {
   .toast {
     width: calc(100% - 16px);
