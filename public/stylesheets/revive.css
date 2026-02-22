@@ -182,11 +182,11 @@ body {
   }
 
   .groupSwitch input:checked ~ .switch-group {
-    left: 10.4em !important;
+    left: calc(100% - 5em) !important;
   }
 
   .groupSwitch input ~ :checked ~ .switch-group {
-    left: 0 !important;
+    left: -0.1em !important;
   }
 
   .colorIcon {
