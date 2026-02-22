@@ -1,11 +1,8 @@
 :root {
   --bg-top: #070c14;
   --bg-bottom: #101725;
-  --panel: rgba(8, 18, 30, 0.86);
   --panel-border: rgba(120, 173, 214, 0.22);
   --text-main: #dfe7f2;
-  --text-muted: #98a6bc;
-  --accent: #f1ae4c;
   --accent-glow: rgba(241, 174, 76, 0.2);
 }
 
@@ -142,21 +139,40 @@ body {
   #lightControllerDiv {
     float: none !important;
     width: auto !important;
-    max-width: 980px !important;
-    margin: 0 auto 14px !important;
+    max-width: 1020px !important;
+    margin: 0 auto 18px !important;
     text-align: center !important;
   }
 
+  .lightInfoContainer {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+
+  .lightInfoDiv,
+  .lightInfoDivCollapsed {
+    float: none !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
   .groupSwitch {
+    order: 100;
     float: none !important;
     display: inline-block !important;
-    margin: 20px 14px 22px !important;
+    margin: 18px 12px 22px !important;
     vertical-align: middle;
   }
 
   .colorIcon {
+    order: 101;
     float: none !important;
     display: inline-block !important;
+    margin: 18px 0 22px !important;
     vertical-align: middle;
   }
 }
