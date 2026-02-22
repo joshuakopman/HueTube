@@ -1,42 +1,101 @@
-HueTube
-=======
+# HueTube
 
-Live updating dashboard application to interact with Phillips Hue smart lighting.
+HueTube is a live-updating dashboard for controlling Philips Hue lights from a browser.
 
-Instructions:
+It supports:
+- Individual light power and color controls
+- Group-level "ALL LIGHTS" control
+- Basic-auth protected write endpoints
+- Optional Wemo integration (gracefully disabled when unavailable)
 
+## Dashboard Preview
 
-Option 1: Run using Docker:<br/>
+![HueTube dashboard](docs/images/hue-dashboard.png)
 
-1) Utilize one of the sample bash scripts /init-scripts to pull and run the latest DockerHub image or build a local image via the Dockerfile.<br/>
+## Requirements
 
-2) Update the Config.js with your local IP and Phillips Hue developer name.<br/>
+- Node.js 18+ (validated on modern Node)
+- npm
+- Philips Hue bridge on your local network
+- Hue API username/token
 
-3) Replace the salt.txt file contents with your desired Admin password.<br/>
-4) (Optional) use env vars instead of editing Config.js:
-   - `HUE_BRIDGE_HOST` (bridge IP)
-   - `HUE_API_URI` (example: `/api/<your-hue-username>`)
-   - `HUE_PORT` (default `80`)
-   - `MONGO_HOST`, `MONGO_DB`
-   - `PORT` / `NODE_PORT`<br/>
+Optional:
+- MongoDB (if unavailable, app falls back to in-memory auth table)
 
-<br/>
+## Configuration
 
-Option 2: Run directly as a MEAN stack app:<br/>
+You can configure runtime settings with environment variables (recommended):
 
-*Start Mongo Db Server /path/to/mongod --dbpath /data<br/>
-1) Update the Config.js with your local IP and Phillips Hue developer name.<br/>
-2) Replace the salt.txt file contents with your desired Admin password.<br/>
-3) cd src<br/>
-4) npm install<br/>
-5) gulp<br/>
-6) node ./app.js<br/>
+- `HUE_BRIDGE_HOST` (example: `192.168.0.253`)
+- `HUE_API_URI` (example: `/api/<hue-username>`)
+- `HUE_PORT` (default: `80`)
+- `PORT` or `NODE_PORT` (default app port: `7076`)
+- `MONGO_HOST` (default: `mongodb`)
+- `MONGO_DB` (default: `authentication`)
+- `ADMIN_USERNAME` (default: `admin`)
+- `ADMIN_PASSWORD` (overrides `salt.txt`)
 
-Node server will be running on port 7076. App is locally accessible at http://localhost:7076<br/> 
-Bridge port, IP, and Hue Developer ID are all configurable via src/Config.js within node. <br/>
+You can also edit `Config.js` directly, but env vars are preferred for local/dev/prod parity.
 
-Notes:
-- This app was designed to keep real Hue credentials out of Git by mounting a host `Config.js` and `salt.txt` into the container.
-- Wemo integration is optional; if the old Wemo dependency fails to load on newer Node versions, Hue routes still start.
+## Authentication
 
+Write operations use HTTP Basic auth.
 
+Default username:
+- `admin`
+
+Default password source:
+- plaintext content of `salt.txt`
+
+Recommended:
+- set `ADMIN_PASSWORD` in your shell/environment instead of editing files.
+
+## Run Locally
+
+```bash
+npm install
+npm start
+```
+
+App URL:
+- `http://localhost:7076` (or your configured `PORT`)
+
+Example startup with env vars:
+
+```bash
+HUE_BRIDGE_HOST=192.168.0.253 \
+HUE_API_URI=/api/<your-hue-username> \
+HUE_PORT=80 \
+npm start
+```
+
+## Notes on Frontend Assets
+
+This project serves compiled frontend assets by default:
+- `public/stylesheets/dist/styles.min.css`
+- `public/javascripts/dist/scripts.min.js`
+
+A refresh layer is loaded from:
+- `public/stylesheets/revive.css`
+
+## Optional Wemo Behavior
+
+Wemo support is optional. If the legacy `wemo` dependency cannot load on your Node version, Hue functionality still runs.
+
+## Troubleshooting
+
+- If `npm install` fails due to permission/symlink issues:
+
+```bash
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+If needed:
+
+```bash
+sudo chown -R "$(whoami)" ~/.npm /Users/joshuakopman/HueTube
+```
+
+- If MongoDB is unavailable, startup should log a fallback message and continue using in-memory auth.
