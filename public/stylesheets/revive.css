@@ -168,16 +168,20 @@ body {
   .groupSwitch {
     order: 100;
     float: none !important;
-    display: inline-block !important;
-    margin: 18px 12px 22px !important;
+    display: block !important;
+    flex: 0 0 100%;
+    width: max-content;
+    margin: 18px auto 8px !important;
     vertical-align: middle;
   }
 
   .colorIcon {
     order: 101;
     float: none !important;
-    display: inline-block !important;
-    margin: 18px 0 22px !important;
+    display: block !important;
+    flex: 0 0 100%;
+    width: max-content;
+    margin: 0 auto 22px !important;
     vertical-align: middle;
   }
 }
