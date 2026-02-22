@@ -168,33 +168,56 @@ body {
   .groupSwitch {
     order: 100;
     float: none !important;
-    display: block !important;
+    display: flex !important;
+    justify-content: center;
     flex: 0 0 100%;
-    width: 15.48em !important;
-    max-width: 100%;
+    width: 100% !important;
     margin: 18px auto 8px !important;
     vertical-align: middle;
+    border: 0 !important;
+    background: transparent !important;
   }
 
   .groupSwitch #groupToggle {
-    margin: 0 auto !important;
+    width: 15.48em !important;
+    margin: 0 !important;
   }
 
   .colorIcon {
     order: 101;
     float: none !important;
-    display: block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
     flex: 0 0 100%;
-    width: 56px !important;
-    height: 56px !important;
+    width: 100% !important;
+    height: auto !important;
     margin: 0 auto 22px !important;
     vertical-align: middle;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 
   .colorIcon .colorIconImg {
     display: block;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 226, 239, 0.55);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .colorIcon:hover {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .colorIcon:hover .colorIconImg {
+    border-color: rgba(241, 174, 76, 0.7);
+    box-shadow: 0 0 0 3px rgba(241, 174, 76, 0.22);
   }
 }
