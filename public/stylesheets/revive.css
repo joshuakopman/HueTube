@@ -182,7 +182,7 @@ body {
   }
 
   .groupSwitch input:checked ~ .switch-group {
-    left: 10.4em !important;
+    left: calc(100% - 2em) !important;
   }
 
   .groupSwitch input ~ :checked ~ .switch-group {
@@ -190,9 +190,10 @@ body {
   }
 
   .groupSwitch .switch-group {
-    width: 4.9em !important;
-    height: 4.9em !important;
-    border-radius: 3em !important;
+    width: 1.9em !important;
+    height: 1.9em !important;
+    border-radius: 2em !important;
+    top: -0.05em !important;
   }
 
   .groupSwitch label.off.group {
