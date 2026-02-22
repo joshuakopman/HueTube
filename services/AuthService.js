@@ -1,16 +1,44 @@
-var Config = require("../Config");
+var crypto = require("crypto");
 
 function AuthService(userCollection){
     this.users = userCollection;
 };
 
-AuthService.prototype.PromptForCredentials = function(req,res,next){
-    var auth;
-    this.users.find({_id:"adminuser"}).toArray(function(err,items){
-        if (req.headers.authorization) {
-          auth = Buffer.from(req.headers.authorization.substring(6), 'base64').toString().split(':');
+function safeStringCompare(a, b) {
+    var left = Buffer.from(a || "", "utf8");
+    var right = Buffer.from(b || "", "utf8");
+    if (left.length !== right.length) {
+        return false;
+    }
+    return crypto.timingSafeEqual(left, right);
+}
+
+function parseBasicAuthHeader(headerValue) {
+    if (!headerValue || headerValue.indexOf("Basic ") !== 0) {
+        return null;
+    }
+    try {
+        var decoded = Buffer.from(headerValue.substring(6), "base64").toString();
+        var splitIndex = decoded.indexOf(":");
+        if (splitIndex < 0) {
+            return null;
         }
-        if (err || !items || !items[0] || !auth || auth[0] !== items[0].name || auth[1] !== items[0].password) {
+        return [decoded.substring(0, splitIndex), decoded.substring(splitIndex + 1)];
+    } catch (e) {
+        return null;
+    }
+}
+
+AuthService.prototype.PromptForCredentials = function(req,res,next){
+    this.users.find({_id:"adminuser"}).toArray(function(err,items){
+        var auth = parseBasicAuthHeader(req.headers.authorization);
+        var isAuthorized = !err &&
+            items &&
+            items[0] &&
+            auth &&
+            safeStringCompare(auth[0], items[0].name) &&
+            safeStringCompare(auth[1], items[0].password);
+        if (!isAuthorized) {
             res.statusCode = 401;
             res.setHeader('WWW-Authenticate', 'Basic realm="Enter Valid Credentials To Access HueTube Dashboard"');
             res.end('You are not authorized to view the HueTube Light Dashboard.');

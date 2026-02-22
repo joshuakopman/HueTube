@@ -1,12 +1,10 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var bodyParser = require('body-parser');
 var LightController = require('./controllers/LightController');
 var WemoController = require('./controllers/WemoController');
 var AmbianceController = require('./controllers/AmbianceController');
 var LightService = require('./services/LightService');
-var AuthService = require('./services/AuthService');
 var WemoService = require('./services/WemoService');
 var SpotifyService = require('./services/SpotifyService');
 var Config = require("./Config")
@@ -25,8 +23,8 @@ Config.spotify.port = parseInt(process.env.SPOTIFY_PORT || Config.spotify.port, 
 Config.spotify.uri = process.env.SPOTIFY_URI || Config.spotify.uri;
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.disable('etag');
 
@@ -69,9 +67,14 @@ var dbName = process.env.MONGO_DB || Config.authdb || 'authentication';
 var dbUrl = 'mongodb://' + mongoHost + '/' + dbName;
 
 new EncryptionHelper().GetSeededAdminPassword(function(pwd){
-  var admin = {_id:"adminuser" , name:"admin", password: pwd.trim()};
+  var adminPassword = (process.env.ADMIN_PASSWORD || '').trim() || (pwd || '').trim();
+  var admin = {
+    _id: "adminuser",
+    name: (process.env.ADMIN_USERNAME || 'admin').trim(),
+    password: adminPassword
+  };
 
-  mongo.connect(dbUrl, function (err, connection) {
+  mongo.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, connection) {
     if (err) {
       console.log('Mongo unavailable. Starting with in-memory auth table. Error:', err.message || err);
       var fallbackUsersTable = createInMemoryUsersTable(admin);
@@ -80,7 +83,10 @@ new EncryptionHelper().GetSeededAdminPassword(function(pwd){
 
     var db = typeof connection.db === 'function' ? connection.db(dbName) : connection;
     var usersTable = db.collection('Users');
-    usersTable.save(admin,function(){
+    usersTable.updateOne({ _id: admin._id }, { $set: admin }, { upsert: true }, function(saveErr){
+      if (saveErr) {
+        console.log('Failed to persist admin user record. Continuing startup.', saveErr.message || saveErr);
+      }
       wireControllers(usersTable);
     });
   });
