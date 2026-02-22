@@ -68,7 +68,7 @@ $scope.toggle = function(id,state,hue,bri,sat,effect,isGroup,isAmbient,songURI){
   }
 
 
-  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/' + endPoint + id, JSON.stringify(lightStateChange)).
+  $http.put('/' + endPoint + id, JSON.stringify(lightStateChange)).
       success(function(data) {
           clicked = false;
           if(isGroup && !isAmbient){
@@ -97,7 +97,7 @@ $scope.wakeUp = function(){
 
 $scope.switchState = function(type){
   clicked = true;
-  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/stereo/').
+  $http.put('/stereo/').
       success(function(data) {
           clicked = false;
       });
@@ -105,7 +105,7 @@ $scope.switchState = function(type){
 
 $scope.switchACState = function(type){
   clicked = true;
-  $http.put('http://' + window.location.hostname + ':' + window.location.port + '/ac/').
+  $http.put('/ac/').
       success(function(data) {
           clicked = false;
       });
@@ -113,5 +113,4 @@ $scope.switchACState = function(type){
 
 
 }]);
-
 

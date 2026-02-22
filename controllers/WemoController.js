@@ -1,16 +1,15 @@
 var AuthService = require("../services/AuthService");
-var Config = require("../Config");
 
 function WemoController(MyWemoService,UsersCollection){
   this.wemoService = MyWemoService;
-  usersCollection = UsersCollection;
+  this.usersCollection = UsersCollection;
 };
 
 WemoController.prototype.BuildRouting = function(app,socket,endpointName,socketevent){
   var self = this;
 
 app.put('/' + endpointName + '/', function(req, res) {
-  new AuthService(usersCollection).PromptForCredentials(req,res,function(){
+  new AuthService(self.usersCollection).PromptForCredentials(req,res,function(){
       self.wemoService.changeState(function(result){
         res.send(result);
       });

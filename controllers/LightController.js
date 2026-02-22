@@ -1,28 +1,29 @@
 var AuthService = require("../services/AuthService");
 
 function LightController(LightService,UsersCollection){
-	lightService = LightService;
-  usersCollection = UsersCollection;
+	this.lightService = LightService;
+  this.usersCollection = UsersCollection;
 };
 
 LightController.prototype.BuildRouting = function(app,socket){
+  var self = this;
   app.get('/lights', function(req, res) {
-    lightService.getLights(function(statusCode,result){
+    self.lightService.getLights(function(statusCode,result){
       res.send(result);
     });
   });
 
   app.put('/lights/:id', function(req, res) {
-    new AuthService(usersCollection).PromptForCredentials(req,res,function(){
-      lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
+    new AuthService(self.usersCollection).PromptForCredentials(req,res,function(){
+      self.lightService.setLightState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
         res.send(result);
       });
      });
   });
 
   app.put('/groups/:id', function(req, res) {
-     new AuthService(usersCollection).PromptForCredentials(req,res,function(){
-      lightService.setGroupState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
+     new AuthService(self.usersCollection).PromptForCredentials(req,res,function(){
+      self.lightService.setGroupState(req.body.state,req.params.id,req.body.hue,req.body.bri,req.body.sat,req.body.effect,function(statusCode,result){
         res.send(result);
        });
      });
@@ -30,7 +31,7 @@ LightController.prototype.BuildRouting = function(app,socket){
 
   /*Websockets lights listing */
   socket.on('ready', function() {
-      lightService.getLights(function(statusCode,result){
+      self.lightService.getLights(function(statusCode,result){
         socket.emit('talk',
         {
             message: result
